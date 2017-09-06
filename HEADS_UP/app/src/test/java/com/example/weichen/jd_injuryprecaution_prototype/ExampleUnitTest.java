@@ -1,4 +1,4 @@
-package com.example.weichen.heads_up;
+package com.example.weichen.jd_injuryprecaution_prototype;
 
 import org.junit.Test;
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.newTasks_popup">
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="264dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Date"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="66dp"
+        android:layout_marginTop="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/newTasks_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="169dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:entries="@array/tasks_type"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="43dp"
+        android:text="Task Type"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/task_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_alignBaseline="@+id/tasks_ok"
+        android:layout_alignBottom="@+id/tasks_ok"
+        android:layout_alignLeft="@+id/newTasks_spinner"
+        android:layout_alignStart="@+id/newTasks_spinner" />
+
+    <Button
+        android:id="@+id/tasks_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEW"
+        android:layout_below="@+id/newTasks_spinner"
+        android:layout_alignRight="@+id/newTasks_spinner"
+        android:layout_alignEnd="@+id/newTasks_spinner"
+        android:layout_marginTop="45dp" />
+</RelativeLayout>

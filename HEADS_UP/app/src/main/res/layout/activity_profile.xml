@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.Profile"
+    android:id="@+id/profile_drawerLayout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom = "true">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/profile_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@drawable/bott_nav_color_state"
+            app:itemTextColor="@drawable/bott_nav_color_state"
+            app:menu="@menu/bottom_navigation_main"/>
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="38dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="71dp"
+            android:text="Name"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView19"
+            android:layout_alignStart="@+id/textView19"
+            android:layout_below="@+id/textView19"
+            android:layout_marginTop="40dp"
+            android:text="Email"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/zip_Code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView20"
+            android:layout_alignStart="@+id/textView20"
+            android:layout_below="@+id/textView20"
+            android:layout_marginTop="39dp"
+            android:text="Zip Code"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView19"
+            android:layout_alignEnd="@+id/profile_bottom_navigation"
+            android:layout_alignRight="@+id/profile_bottom_navigation"
+            android:layout_marginEnd="22dp"
+            android:layout_marginRight="22dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/zip_Code"
+            android:layout_alignLeft="@+id/editText3"
+            android:layout_alignStart="@+id/editText3"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/zip_Code"
+            android:layout_alignLeft="@+id/editText4"
+            android:layout_alignStart="@+id/editText4"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/password_changes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:text="Password Change" />
+
+        <Button
+            android:id="@+id/edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_changes"
+            android:layout_marginTop="26dp"
+            android:text="Edit"
+            android:layout_alignLeft="@+id/password_changes"
+            android:layout_alignStart="@+id/password_changes"
+            android:layout_alignRight="@+id/password_changes"
+            android:layout_alignEnd="@+id/password_changes" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/top_action_bar"
+        android:layout_gravity="start"
+        android:id="@+id/profile_top_navigation"
+        />
+
+</android.support.v4.widget.DrawerLayout>

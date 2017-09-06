@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
-    package="com.example.weichen.heads_up">
+    package="com.example.weichen.jd_injuryprecaution_prototype">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,63 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="Home">
 
+        </activity>
+        <activity
+            android:name=".Initial"
+            android:label="Hello &amp; Welcome!" >
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="Login" />
+        <activity
+            android:name=".Registration"
+            android:label="Registration" />
+        <activity
+            android:name=".About"
+            android:label="About" />
+        <activity
+            android:name=".Forgot"
+            android:label="Forgot Password" />
+        <activity
+            android:name=".Profile"
+            android:label="Profile" />
+        <activity
+            android:name=".Status"
+            android:label="Status" />
+        <activity
+            android:name=".Articles"
+            android:label="Articles" />
+        <activity
+            android:name=".Groups"
+            android:label="Groups" />
+        <activity
+            android:name=".Activities"
+            android:label="Activities" />
+        <activity
+            android:name=".Setting"
+            android:label="Setting" />
+        <activity android:name=".Activities_tasks" />
+        <activity android:name=".Activities_quizzes" />
+        <activity android:name=".Activities_surverys" />
+        <activity android:name=".Status_me" />
+        <activity android:name=".Status_groups" />
+        <activity android:name=".Status_local" />
+        <activity android:name=".newTasks_popup" />
+        <activity
+            android:name=".Password_change"
+            android:label="Password Change" />
+        <activity android:name=".begin"
+            android:label="Injury Precaution">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

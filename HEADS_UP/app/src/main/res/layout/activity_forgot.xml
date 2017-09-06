@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.Forgot">
+
+    <Button
+        android:id="@+id/forgot_sendLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:text="Send Link" />
+
+    <EditText
+        android:id="@+id/forgot_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:layout_above="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp" />
+
+    <EditText
+        android:id="@+id/forgot_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/forgot_sendLink"
+        android:layout_alignEnd="@+id/forgot_username"
+        android:layout_alignRight="@+id/forgot_username"
+        android:layout_marginBottom="73dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/forgot_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:text="OR"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+</RelativeLayout>

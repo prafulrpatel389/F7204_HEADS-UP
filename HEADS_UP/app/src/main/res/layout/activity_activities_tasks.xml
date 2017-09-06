@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.Activities_tasks">
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tasks_listView">
+
+
+    </ListView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/tasks_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:fabSize="normal"
+        app:rippleColor="@color/colorPrimaryDark"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:onClick="addTasks"/>
+
+</RelativeLayout>

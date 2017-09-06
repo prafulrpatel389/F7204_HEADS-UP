@@ -1,4 +1,4 @@
-package com.example.weichen.heads_up;
+package com.example.weichen.jd_injuryprecaution_prototype;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.weichen.heads_up", appContext.getPackageName());
+        assertEquals("com.example.weichen.jd_injuryprecaution_prototype", appContext.getPackageName());
     }
 }

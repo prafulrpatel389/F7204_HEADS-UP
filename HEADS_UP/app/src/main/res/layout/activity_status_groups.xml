@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.Status_groups">
+
+    <Spinner
+        android:id="@+id/status_group_sp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/month"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"></Spinner>
+
+    <Spinner
+        android:id="@+id/status_group_sp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/groups"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_alignBaseline="@+id/status_group_sp1"
+        android:layout_alignBottom="@+id/status_group_sp1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"></Spinner>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/status_local"
+        android:layout_below="@+id/status_group_sp1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

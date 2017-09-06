@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/plainText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name of the Group"
+        android:inputType="textPersonName"
+        android:layout_marginTop="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/new_group_button"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="NEW"
+        android:layout_weight="0.01"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_below="@+id/plainText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+</RelativeLayout>

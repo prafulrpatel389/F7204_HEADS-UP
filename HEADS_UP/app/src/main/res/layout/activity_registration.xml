@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.Registration">
+
+    <EditText
+        android:id="@+id/registration_input_passwordConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="363dp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/registration_input_password"
+        android:layout_alignLeft="@+id/registration_input_password"
+        android:layout_alignStart="@+id/registration_input_password" />
+
+    <EditText
+        android:id="@+id/registration_input_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="300dp"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/registration_input_zipcode"
+        android:layout_alignLeft="@+id/registration_input_zipcode"
+        android:layout_alignStart="@+id/registration_input_zipcode" />
+
+    <EditText
+        android:id="@+id/registration_input_zipcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Zip Code"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="234dp"
+        android:layout_below="@+id/registration_input_email"
+        android:layout_alignLeft="@+id/registration_input_email"
+        android:layout_alignStart="@+id/registration_input_email"
+        android:layout_marginTop="22dp" />
+
+    <EditText
+        android:id="@+id/registration_input_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="113dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/registration_input_name"
+        android:layout_alignLeft="@+id/registration_input_name"
+        android:layout_alignStart="@+id/registration_input_name" />
+
+    <EditText
+        android:id="@+id/registration_input_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="171dp"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/registration_input_username"
+        android:layout_alignLeft="@+id/registration_input_username"
+        android:layout_alignStart="@+id/registration_input_username" />
+
+    <EditText
+        android:id="@+id/registration_input_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="42dp"
+        android:layout_marginTop="36dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/registration_button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register!"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="433dp"
+        android:onClick="toRegisterPopup"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp" />
+
+</RelativeLayout>
