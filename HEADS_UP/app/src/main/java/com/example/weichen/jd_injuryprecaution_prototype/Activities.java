@@ -115,7 +115,7 @@ public class Activities extends AppCompatActivity {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new Activities_tasks(), "Tasks");
         adapter.addFragment(new Activities_quizzes(), "Quizzes");
-        adapter.addFragment(new Activities_surverys(), "Surverys");
+        adapter.addFragment(new Activities_surverys(), "Surveys");
         viewPager.setAdapter(adapter);
 
     }

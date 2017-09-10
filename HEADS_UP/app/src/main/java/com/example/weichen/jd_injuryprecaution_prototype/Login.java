@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
             startActivity(new Intent(Login.this, MainActivity.class));
 
         } else {
-            Toast.makeText(Login.this, "Username and Password are not match!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Login.this, "Username and Password do not match!", Toast.LENGTH_LONG).show();
         }
     }
 

@@ -36,7 +36,7 @@ public class Activities_tasks extends Fragment {
 
 
         for (int i = 0; i < 8; i++) {
-            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n" + "Status:  " + status[i]+"\n\n"+"Socre:   100/100";
+            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n" + "Status:  " + status[i]+"\n\n"+"Score:   100/100";
             report.add(value);
         }
 

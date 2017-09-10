@@ -29,7 +29,7 @@ public class Activities_quizzes extends Fragment {
 
 
         for (int i = 0; i < 8; i++) {
-            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n" + "Status:  " + status[i]+"\n\n"+"Socre:   10/10";
+            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n" + "Status:  " + status[i]+"\n\n"+"Score:   10/10";
             report.add(value);
         }
 
