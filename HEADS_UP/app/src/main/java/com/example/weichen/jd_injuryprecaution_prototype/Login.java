@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
@@ -42,13 +41,14 @@ public class Login extends AppCompatActivity {
 
         String _username = username.getText().toString();
         String _password = password.getText().toString();
+        String type = "login";
 
-        if (_username.equals("JDoe") && _password.equals("123")){
-            startActivity(new Intent(Login.this, MainActivity.class));
 
-        } else {
-            Toast.makeText(Login.this, "Username and Password do not match!", Toast.LENGTH_LONG).show();
-        }
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, _username, _password);
+
+
+
     }
 
     public void toForgotLayout(View view) {
