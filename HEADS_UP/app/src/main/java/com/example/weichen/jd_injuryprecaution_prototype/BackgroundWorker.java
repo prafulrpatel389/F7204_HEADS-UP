@@ -133,10 +133,10 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         alertDialog.setMessage(result);
         alertDialog.show();
 
-        if (result.equals("Login Successfully")) {
+        if (result.equals("Login Successful")) {
             context.startActivity(new Intent (context, MainActivity.class));
         }
-        if (result.equals("Register Successfully")) {
+        if (result.equals("Register Successful")) {
             context.startActivity(new Intent (context, Login.class));
         }
 
