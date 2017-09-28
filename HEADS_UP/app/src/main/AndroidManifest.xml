@@ -61,7 +61,7 @@
             android:name=".Password_change"
             android:label="Password Change" />
         <activity android:name=".begin"
-            android:label="Injury Precaution">
+            android:label="HEADS UP">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
