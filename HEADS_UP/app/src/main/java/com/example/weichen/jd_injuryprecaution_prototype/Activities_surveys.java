@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class Activities_surverys extends Fragment {
+public class Activities_surveys extends Fragment {
 
     private ListView listView;
     public String[] date = { "2/20/17","2/15/17","2/12/17","2/17/17","2/12/17","2/5/17","1/22/17","1/18/17"};

@@ -52,7 +52,7 @@
             android:label="Setting" />
         <activity android:name=".Activities_tasks" />
         <activity android:name=".Activities_quizzes" />
-        <activity android:name=".Activities_surverys" />
+        <activity android:name=".Activities_surveys" />
         <activity android:name=".Status_me" />
         <activity android:name=".Status_groups" />
         <activity android:name=".Status_local" />
