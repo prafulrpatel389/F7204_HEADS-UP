@@ -117,7 +117,6 @@ public class Activities extends AppCompatActivity {
         adapter.addFragment(new Activities_quizzes(), "Quizzes");
         adapter.addFragment(new Activities_surveys(), "Surveys");
         viewPager.setAdapter(adapter);
-
     }
 
     @Override

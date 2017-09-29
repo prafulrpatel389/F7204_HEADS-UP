@@ -48,6 +48,9 @@
             android:name=".Activities"
             android:label="Activities" />
         <activity
+            android:name=".Quiz"
+            android:label="Quiz" />
+        <activity
             android:name=".Setting"
             android:label="Setting" />
         <activity android:name=".Activities_tasks" />
