@@ -7,7 +7,7 @@
   $result = mysqli_query($con, $mysql_qry);
 
   if(mysqli_num_rows($result) > 0) {
-    echo "Login Successfully";
+    echo "Login Successful!!!!!!!!!!!!";
   } else {
     echo "Invalid username or password!";
   }

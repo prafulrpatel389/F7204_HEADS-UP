@@ -1,7 +1,7 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
 /**
- * Created by Soyeon on 9/17/2017.
+ * Created by Matthew on 9/29/2017.
  */
 
 import android.content.Intent;
@@ -11,22 +11,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class Surveys extends AppCompatActivity {
+public class Quiz extends AppCompatActivity {
 
-    private SurveyQuestionLibrary mSurveyQuestionLibrary = new SurveyQuestionLibrary();
+    private QuizQuestionLibrary mQuizQuestionLibrary = new QuizQuestionLibrary();
 
+    private TextView mScoreView;
     private TextView mQuestionView;
-
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
     private Button mButtonQuit;
 
-    private int mQuestionNumber = 0;
+    private String mAnswer;
+    private int mScore = 0;
+    private int mQuestionNumber;
 
-    private String surveyQuestionId = "";
+    private String quizQuestionId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class Surveys extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int survey_no = bundle.getInt("survey_no");
 
-        surveyQuestionId = "SurveyQuestion" + survey_no;
+        quizQuestionId = "quizQuestion" + survey_no;
 
         updateQuestion();
 
@@ -52,8 +53,8 @@ public class Surveys extends AppCompatActivity {
         mButtonChoice1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-            //My logic for Button goes in here
-            updateQuestion();
+                //My logic for Button goes in here
+                updateQuestion();
             }
         });
 
@@ -63,41 +64,55 @@ public class Surveys extends AppCompatActivity {
         mButtonChoice2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-            //My logic for Button goes in here
-            updateQuestion();
+                //My logic for Button goes in here
+
+                if (mButtonChoice2.getText() == mAnswer){
+                    mScore = mScore + 1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                }else {
+                    updateQuestion();
+                }
             }
         });
 
         //End of Button Listener for Button2
 
+
         //Start of Button Listener for Button3
         mButtonChoice3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-            //My logic for Button goes in here
-            updateQuestion();
+                //My logic for Button goes in here
+
+                if (mButtonChoice3.getText() == mAnswer){
+                    mScore = mScore + 1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                }else {
+                    updateQuestion();
+                }
             }
         });
 
         //End of Button Listener for Button3
 
-        //Start of Button Listener for Quit
         mButtonQuit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-            //My logic for Button goes in here
+                //My logic for Button goes in here
 
-            storeCurrentQuestion(getCurrentQuestion() - 1);
+                storeCurrentQuestion(getCurrentQuestion() - 1);
 
-            Intent i = new Intent(Surveys.this, Activities.class);
-            i.putExtra("frgToLoad", 2);
+                Intent i = new Intent(Quiz.this, Activities.class);
+                i.putExtra("frgToLoad", 1);
 
-            // Now start your activity
-            startActivity(i);
+                // Now start your activity
+                startActivity(i);
             }
         });
-
-        //End of Button Listener for Quit
     }
 
     private void updateQuestion(){
@@ -105,18 +120,18 @@ public class Surveys extends AppCompatActivity {
         mQuestionNumber = getCurrentQuestion();
 
         if (mQuestionNumber > 3) {
-            Intent i = new Intent(Surveys.this, Activities.class);
-            i.putExtra("frgToLoad", 2);
+            Intent i = new Intent(Quiz.this, Activities.class);
+            i.putExtra("frgToLoad", 1);
 
             storeCurrentQuestion(0);
 
             // Now start your activity
             startActivity(i);
         } else {
-            mQuestionView.setText(mSurveyQuestionLibrary.getQuestion(mQuestionNumber));
-            mButtonChoice1.setText(mSurveyQuestionLibrary.getChoice1(mQuestionNumber));
-            mButtonChoice2.setText(mSurveyQuestionLibrary.getChoice2(mQuestionNumber));
-            mButtonChoice3.setText(mSurveyQuestionLibrary.getChoice3(mQuestionNumber));
+            mQuestionView.setText(mQuizQuestionLibrary.getQuestion(mQuestionNumber));
+            mButtonChoice1.setText(mQuizQuestionLibrary.getChoice1(mQuestionNumber));
+            mButtonChoice2.setText(mQuizQuestionLibrary.getChoice2(mQuestionNumber));
+            mButtonChoice3.setText(mQuizQuestionLibrary.getChoice3(mQuestionNumber));
 
             mQuestionNumber++;
 
@@ -125,16 +140,20 @@ public class Surveys extends AppCompatActivity {
     }
 
     private void storeCurrentQuestion(int id) {
-        SharedPreferences mSharedPreferences = getSharedPreferences(surveyQuestionId, MODE_PRIVATE);
+        SharedPreferences mSharedPreferences = getSharedPreferences(quizQuestionId, MODE_PRIVATE);
         SharedPreferences.Editor mEditor = mSharedPreferences.edit();
-        mEditor.putInt("question", id);
+        mEditor.putInt("quizquestion", id);
         mEditor.apply();
     }
 
     private int getCurrentQuestion() {
-        SharedPreferences mSharedPreferences = getSharedPreferences(surveyQuestionId, MODE_PRIVATE);
-        int selectedQuestion = mSharedPreferences.getInt("question", 0);
+        SharedPreferences mSharedPreferences = getSharedPreferences(quizQuestionId, MODE_PRIVATE);
+        int selectedQuestion = mSharedPreferences.getInt("quizquestion", 0);
         return selectedQuestion;
     }
 
+
+    private void updateScore(int point) {
+        mScoreView.setText("" + mScore);
+    }
 }

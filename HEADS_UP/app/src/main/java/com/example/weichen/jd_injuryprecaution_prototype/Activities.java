@@ -34,10 +34,6 @@ public class Activities extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.activities_tab);
         tabLayout.setupWithViewPager(mViewPager);
 
-
-
-
-
         //sets toggle of drawer navigation
         mDrawerLayout = (DrawerLayout) findViewById(R.id.activities_drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -108,16 +104,33 @@ public class Activities extends AppCompatActivity {
             }
         });
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
-    }
 
+        if (getIntent().getExtras() != null) {
+            int intentFragment = getIntent().getExtras().getInt("frgToLoad");
+
+            switch (intentFragment) {
+                case 0:
+                    mViewPager.setCurrentItem(0);
+                    break;
+                case 1:
+                    mViewPager.setCurrentItem(1);
+                    break;
+                case 2:
+                    mViewPager.setCurrentItem(2);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new Activities_tasks(), "Tasks");
         adapter.addFragment(new Activities_quizzes(), "Quizzes");
-        adapter.addFragment(new Activities_surverys(), "Surveys");
+        adapter.addFragment(new Activities_surveys(), "Surveys");
         viewPager.setAdapter(adapter);
-
     }
 
     @Override

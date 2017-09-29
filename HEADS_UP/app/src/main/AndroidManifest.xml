@@ -48,11 +48,17 @@
             android:name=".Activities"
             android:label="Activities" />
         <activity
+            android:name=".Quiz"
+            android:label="Quiz" />
+        <activity
+            android:name=".Surveys"
+            android:label="Surveys" />
+        <activity
             android:name=".Setting"
             android:label="Setting" />
         <activity android:name=".Activities_tasks" />
         <activity android:name=".Activities_quizzes" />
-        <activity android:name=".Activities_surverys" />
+        <activity android:name=".Activities_surveys" />
         <activity android:name=".Status_me" />
         <activity android:name=".Status_groups" />
         <activity android:name=".Status_local" />
@@ -61,7 +67,7 @@
             android:name=".Password_change"
             android:label="Password Change" />
         <activity android:name=".begin"
-            android:label="Injury Precaution">
+            android:label="HEADS UP">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
