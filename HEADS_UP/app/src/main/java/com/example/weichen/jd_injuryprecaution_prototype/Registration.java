@@ -52,26 +52,6 @@ public class Registration extends AppCompatActivity {
             cf_password.setError("Password can't be empty!");
         }
 
-//        register = (Button)findViewById(R.id.registration_button_register);
-//        register.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder rBuilder = new AlertDialog.Builder(Registration.this);
-//                View mView = getLayoutInflater().inflate(R.layout.registration_popup, null);
-//                final TextView registerPop = (TextView) mView.findViewById(R.id.textView5);
-//                registerPop.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        startActivity(new Intent(Registration.this, Login.class));
-//                    }
-//                });
-//                rBuilder.setView(mView);
-//                AlertDialog dialog = rBuilder.create();
-//                dialog.show();
-//            }
-//        });
-
-
     }
 
     public void toRegisterPopup(View view) {
@@ -82,7 +62,7 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(Registration.this, "Passwords are not matched! ", Toast.LENGTH_LONG).show();
         } else if (!(zipcode.length() == 5)) {
             Toast.makeText(Registration.this, "Invalid Zip Code ", Toast.LENGTH_LONG).show();
-        } else if ( email.getText().toString().contains("@") == false || email.getText().toString().contains(".") == false) {
+        } else if ( (email.getText().toString().contains("@") == false) || (email.getText().toString().contains(".") == false)) {
             Toast.makeText(Registration.this, "Invalid Email", Toast.LENGTH_LONG).show();
         } else {
             _name = name.getText().toString();

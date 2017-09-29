@@ -1,21 +1,31 @@
 <?php
   // Connect with MYSQL
   require "connect.php";
+  require "login.php";
   // Define Variables
-  $user_name = $_Post["user_name"];
-  $user_zip = $_POST["user_zip"];
-  // Select Database
-  mysqli_select_db($con, 'id2847948_heads_up');
+  $name =  $_POST["user_name"];
+  $zip = $_POST["user_zip"];
+  $email = $_POST["user_email"];
 
-  //Select query
-  $sql = "SELECT zipcode *FROM user_profiles WHERE user_name = '$user_name'";
 
-  $result = mysqli_query($con, $sql);
-  $row = mysqli_fetch_row($result);
+  $sqlN = "UPDATE user_profiles SET name = '$name' WHERE username = '$user_name' ";
+  $sqlE = "UPDATE user_profiles SET email = '$email' WHERE username = '$user_name' ";
+  $sqlZ = "UPDATE user_profiles SET zipcode = '$zip' WHERE username = '$user_name' ";
 
-  $sql = "UPDATE user_profiles SET zipcode = '$user_zip' ";
-  $result = mysqli_query($dbc, $sql);
-  echo "Zipcode successfully changed!";
+  if (!empty($name)) {
+    $con->query($sqlN);
+    echo "name";
+  }
+  if (!empty($email)) {
+    $con->query($sqlE);
+    echo "email";
+  }
+  if (!empty($zip)) {
+    $con->query($sqlZ);
+    echo "zip";
+  }
+
+
   $con ->close();
 
 ?>

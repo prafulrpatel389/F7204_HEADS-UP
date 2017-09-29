@@ -26,15 +26,13 @@
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="38dp"
-            android:layout_marginStart="38dp"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="62dp"
             android:text="Name"
             android:textColor="@android:color/background_dark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/password_changes"
+            android:layout_toStartOf="@+id/password_changes" />
 
         <TextView
             android:id="@+id/textView20"
@@ -61,57 +59,54 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/name_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
             android:layout_alignBottom="@+id/textView19"
-            android:layout_alignEnd="@+id/profile_bottom_navigation"
-            android:layout_alignRight="@+id/profile_bottom_navigation"
-            android:layout_marginEnd="22dp"
-            android:layout_marginRight="22dp"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:layout_alignLeft="@+id/email_change"
+            android:layout_alignStart="@+id/email_change" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/email_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
             android:layout_above="@+id/zip_Code"
-            android:layout_alignLeft="@+id/editText3"
-            android:layout_alignStart="@+id/editText3"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:layout_toRightOf="@+id/zip_Code"
+            android:layout_toEndOf="@+id/zip_Code" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/zipcode_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/zip_Code"
-            android:layout_alignLeft="@+id/editText4"
-            android:layout_alignStart="@+id/editText4"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_alignBaseline="@+id/zip_Code"
+            android:layout_alignBottom="@+id/zip_Code"
+            android:layout_alignLeft="@+id/email_change"
+            android:layout_alignStart="@+id/email_change" />
 
         <Button
             android:id="@+id/password_changes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText5"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="65dp"
-            android:text="Password Change" />
+            android:text="Password Change"
+            android:layout_marginTop="63dp"
+            android:layout_below="@+id/zipcode_change"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/edit_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/password_changes"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="40dp"
             android:text="Edit"
-            android:layout_alignLeft="@+id/password_changes"
-            android:layout_alignStart="@+id/password_changes"
-            android:layout_alignRight="@+id/password_changes"
-            android:layout_alignEnd="@+id/password_changes" />
+            android:layout_below="@+id/password_changes"
+            android:layout_centerHorizontal="true"
+            android:onClick="editProfile"/>
 
 
     </RelativeLayout>

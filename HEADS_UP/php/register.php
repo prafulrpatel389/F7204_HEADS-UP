@@ -16,15 +16,19 @@
   $reseltEmail = mysqli_query($con, $contEmail);
 
   if(($con->query($mysql_qry)) === TRUE) {
-    echo "Register Successfully";
+
+    echo "Register Successful";
+
   } else if (mysqli_num_rows($resultName) > 0){
-    echo "Username already exists.";
+
+    echo "Username already exists";
+
   } else if (mysqli_num_rows($reseltEmail) > 0){
+
     echo "Email already exists";
   }
     else {
     echo "Register Failed"."</b>";
-    echo "Error: " .$mysql_qry ;
   }
   $con->close();
 

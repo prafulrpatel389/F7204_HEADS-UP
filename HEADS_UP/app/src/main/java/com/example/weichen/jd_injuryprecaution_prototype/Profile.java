@@ -19,7 +19,7 @@ public class Profile extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private EditText zipcode;
+    private EditText zipcode, email, name;
     private Button password;
     private Button edit;
 
@@ -30,6 +30,11 @@ public class Profile extends AppCompatActivity {
 
         password = (Button)findViewById(R.id.password_changes);
         edit = (Button)findViewById(R.id.edit_profile);
+
+        name = (EditText) findViewById(R.id.name_change);
+        zipcode = (EditText) findViewById(R.id.zipcode_change);
+        email = (EditText) findViewById(R.id.email_change);
+
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,15 +129,17 @@ public class Profile extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.action_setting, menu);
         return true;
     }
-    public void toMainLayout(View view){
+    public void editProfile(View view){
 
         String _zipcode = zipcode.getText().toString();
+        String _email = email.getText().toString();
+        String _name = name.getText().toString();
 
         String type = "profile";
 
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, _zipcode);
+        backgroundWorker.execute(type, _name, _zipcode, _email);
 
 
 
