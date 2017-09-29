@@ -1,10 +1,10 @@
 <?php
   require "connect.php";
-  $user_username =$_POST["user_username"];
-  $user_name = $_POST["user_name"];
+  $user_username = $_POST["user_username"];
+  $user_name =$_POST["user_name"];
   $user_pass = $_POST["user_pass"];
   $user_email =$_POST["user_email"];
-  $user_zip = $_POST["user_zip"];
+  $user_zip =$_POST["user_zip"];
 
   $mysql_qry = "insert into user_profiles (username, name, password, email, zipcode) values ('$user_username','$user_name','$user_pass', '$user_email', '$user_zip')";
   $contUsername = "select * from user_profiles where username like '$user_username'";
