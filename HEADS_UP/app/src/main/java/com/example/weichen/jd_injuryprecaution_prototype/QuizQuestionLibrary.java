@@ -4,24 +4,22 @@ package com.example.weichen.jd_injuryprecaution_prototype;
  * Created by Matthew on 9/29/2017.
  */
 
-public class QuestionLibrary {
+public class QuizQuestionLibrary {
 
     private String mQuestions [] = {
-            "Which part of the plant holds it in the soil?",
-            "This part of the plant absorbs energy from the sun.",
-            "This part of the plant attracts bees, butterflies and hummingbirds.",
-            "The _______ holds the plant upright."
-
+            "Quiz question 1",
+            "Quiz question 2",
+            "Quiz question 3",
+            "Quiz question 4"
     };
 
 
     private String mChoices [][] = {
-            {"Roots", "Stem", "Flower"},
-            {"Fruit", "Leaves", "Seeds"},
-            {"Bark", "Flower", "Roots"},
-            {"Flower", "Leaves", "Stem"}
+            {"Yes", "Maybe", "No"},
+            {"Yes", "Maybe", "No"},
+            {"Yes", "Maybe", "No"},
+            {"Yes", "Maybe", "No"}
     };
-
 
 
     private String mCorrectAnswers[] = {"Roots", "Leaves", "Flower", "Stem"};

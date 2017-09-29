@@ -42,6 +42,7 @@ public class Activities_quizzes extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), Quiz.class);
+                intent.putExtra("survey_no", position);
                 startActivity(intent);
             }
         });
