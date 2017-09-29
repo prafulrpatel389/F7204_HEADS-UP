@@ -51,6 +51,9 @@
             android:name=".Quiz"
             android:label="Quiz" />
         <activity
+            android:name=".Surveys"
+            android:label="Surveys" />
+        <activity
             android:name=".Setting"
             android:label="Setting" />
         <activity android:name=".Activities_tasks" />
