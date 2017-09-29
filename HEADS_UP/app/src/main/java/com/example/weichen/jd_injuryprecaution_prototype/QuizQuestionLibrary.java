@@ -25,8 +25,6 @@ public class QuizQuestionLibrary {
     private String mCorrectAnswers[] = {"Roots", "Leaves", "Flower", "Stem"};
 
 
-
-
     public String getQuestion(int a) {
         String question = mQuestions[a];
         return question;

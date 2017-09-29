@@ -18,7 +18,7 @@ public class Activities_surveys extends Fragment {
     private ListView listView;
     public String[] date = { "2/20/17","2/15/17","2/12/17","2/17/17","2/12/17","2/5/17","1/22/17","1/18/17"};
     String[] type = new String[] {"Daily Training", "Pre-game Training", "Game Time", "Post-game Recover","Daily Training", "Pre-game Training", "Game Time", "Post-game Recover"};
-    String[] status = new String[] {"Working", "Finished","Finished","Finished","Finished","Finished","Finished","Finished"};
+    String[] status = new String[] {"Feedback", "Finished","Finished","Finished","Finished","Finished","Finished","Finished"};
     private ArrayList<String> report = new ArrayList<>();
 
     @Nullable
@@ -30,8 +30,8 @@ public class Activities_surveys extends Fragment {
         listView = (ListView)view.findViewById(R.id.surverys_listView);
 
 
-        for (int i = 0; i < 8; i++) {
-            String value = "Date:    "+date[i] + "\n\n" + "Status:  " + status[i];
+        for (int i = 0; i < 1; i++) {
+            String value = "Date:    "+date[i] + "\n\n" + "Description:  " + status[i];
             report.add(value);
         }
 

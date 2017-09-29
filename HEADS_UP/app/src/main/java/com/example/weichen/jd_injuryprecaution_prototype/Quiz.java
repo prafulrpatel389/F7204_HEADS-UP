@@ -32,7 +32,7 @@ public class Quiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_surveys);
+        setContentView(R.layout.activity_quiz);
 
         mQuestionView = (TextView)findViewById(R.id.question);
 
@@ -41,6 +41,7 @@ public class Quiz extends AppCompatActivity {
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
 
         mButtonQuit    = (Button)findViewById(R.id.quit);
+        mButtonQuit.setText("Save & Quit");
 
         Bundle bundle = getIntent().getExtras();
         int survey_no = bundle.getInt("survey_no");
@@ -151,7 +152,6 @@ public class Quiz extends AppCompatActivity {
         int selectedQuestion = mSharedPreferences.getInt("quizquestion", 0);
         return selectedQuestion;
     }
-
 
     private void updateScore(int point) {
         mScoreView.setText("" + mScore);

@@ -30,8 +30,8 @@ public class Activities_quizzes extends Fragment {
         listView = (ListView)view.findViewById(R.id.quizzes_listView);
 
 
-        for (int i = 0; i < 8; i++) {
-            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n" + "Status:  " + status[i]+"\n\n"+"Score:   10/10";
+        for (int i = 0; i < 2; i++) {
+            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n";
             report.add(value);
         }
 
