@@ -41,6 +41,7 @@ public class Quiz extends AppCompatActivity {
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
 
         mButtonQuit    = (Button)findViewById(R.id.quit);
+        mButtonQuit.setText("Save & Quit");
 
         Bundle bundle = getIntent().getExtras();
         int survey_no = bundle.getInt("survey_no");
