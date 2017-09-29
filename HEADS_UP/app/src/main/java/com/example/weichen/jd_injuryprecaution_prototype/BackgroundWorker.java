@@ -36,6 +36,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         String type = params[0];
         String login_url = "https://unexampled-self.000webhostapp.com/connect/login.php";
         String register_url = "https://unexampled-self.000webhostapp.com/connect/register.php";
+        String profile_url = "https://unexampled-self.000webhostapp.com/connect/profile.php";
 
         if (type.equals("login")) {
             try {
@@ -118,8 +119,48 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 e.printStackTrace();
             }
         }
+        if (type.equals("profile")) {
+
+            try {
+
+                String zipcode = params[1];
+
+                URL url = new URL(profile_url);
+
+                HttpURLConnection httpURLConnection =  (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.setDoOutput(true);
+                OutputStream outputStream  = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("user_zip", "UTF-8")+"="+URLEncoder.encode(zipcode, "UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                result = "";
+                String line;
+                while ((line = bufferedReader.readLine())!= null) {
+                    result += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
         return null;
     }
+
 
     @Override
     protected void onPreExecute() {
@@ -138,6 +179,9 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         }
         if (result.equals("Register Successful")) {
             context.startActivity(new Intent (context, Login.class));
+        }
+        if (result.equals("Profile Editing Successful")) {
+            context.startActivity(new Intent(context, MainActivity.class));
         }
 
 

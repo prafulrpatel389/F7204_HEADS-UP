@@ -12,13 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-
+    private EditText zipcode;
     private Button password;
     private Button edit;
 
@@ -123,6 +124,20 @@ public class Profile extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.action_setting, menu);
         return true;
     }
+    public void toMainLayout(View view){
+
+        String _zipcode = zipcode.getText().toString();
+
+        String type = "profile";
+
+
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, _zipcode);
+
+
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -135,4 +150,6 @@ public class Profile extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
