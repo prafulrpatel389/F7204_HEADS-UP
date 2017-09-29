@@ -56,7 +56,7 @@
             android:layout_alignStart="@+id/textView20"
             android:layout_below="@+id/textView20"
             android:layout_marginTop="39dp"
-            android:text="Zip Code"
+            android:text="Zipcode"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp" />
 
