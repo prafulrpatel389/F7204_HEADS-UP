@@ -5,6 +5,7 @@ package com.example.weichen.jd_injuryprecaution_prototype;
  */
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class Surveys extends AppCompatActivity {
 
     private int mQuestionNumber = 0;
 
+    private String surveyQuestionId = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,11 @@ public class Surveys extends AppCompatActivity {
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
 
         mButtonQuit    = (Button)findViewById(R.id.quit);
+
+        Bundle bundle = getIntent().getExtras();
+        int survey_no = bundle.getInt("survey_no");
+
+        surveyQuestionId = "SurveyQuestion" + survey_no;
 
         updateQuestion();
 
@@ -79,6 +87,8 @@ public class Surveys extends AppCompatActivity {
             public void onClick(View view){
             //My logic for Button goes in here
 
+            storeCurrentQuestion(getCurrentQuestion() - 1);
+
             Intent i = new Intent(Surveys.this, Activities.class);
             i.putExtra("frgToLoad", 2);
 
@@ -91,9 +101,14 @@ public class Surveys extends AppCompatActivity {
     }
 
     private void updateQuestion(){
+
+        mQuestionNumber = getCurrentQuestion();
+
         if (mQuestionNumber > 3) {
             Intent i = new Intent(Surveys.this, Activities.class);
             i.putExtra("frgToLoad", 2);
+
+            storeCurrentQuestion(0);
 
             // Now start your activity
             startActivity(i);
@@ -104,7 +119,22 @@ public class Surveys extends AppCompatActivity {
             mButtonChoice3.setText(mSurveyQuestionLibrary.getChoice3(mQuestionNumber));
 
             mQuestionNumber++;
+
+            storeCurrentQuestion(mQuestionNumber);
         }
+    }
+
+    private void storeCurrentQuestion(int id) {
+        SharedPreferences mSharedPreferences = getSharedPreferences(surveyQuestionId, MODE_PRIVATE);
+        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+        mEditor.putInt("question", id);
+        mEditor.apply();
+    }
+
+    private int getCurrentQuestion() {
+        SharedPreferences mSharedPreferences = getSharedPreferences(surveyQuestionId, MODE_PRIVATE);
+        int selectedQuestion = mSharedPreferences.getInt("question", 0);
+        return selectedQuestion;
     }
 
 }
