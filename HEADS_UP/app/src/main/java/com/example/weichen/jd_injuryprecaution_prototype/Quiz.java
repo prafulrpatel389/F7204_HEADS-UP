@@ -21,6 +21,7 @@ public class Quiz extends AppCompatActivity {
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
+    private Button mButtonQuit;
 
     private String mAnswer;
     private int mScore = 0;
@@ -36,6 +37,7 @@ public class Quiz extends AppCompatActivity {
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
+        mButtonQuit = (Button)findViewById(R.id.quit);
 
         updateQuestion();
 
@@ -96,11 +98,27 @@ public class Quiz extends AppCompatActivity {
         });
 
         //End of Button Listener for Button3
+
+        mButtonQuit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //My logic for Button goes in here
+
+                Intent i = new Intent(Quiz.this, Activities.class);
+                i.putExtra("frgToLoad", 1);
+
+                // Now start your activity
+                startActivity(i);
+            }
+        });
     }
 
     private void updateQuestion(){
         if (mQuestionNumber > 3) {
-            startActivity(new Intent(Quiz.this, Activities.class));
+            Intent i = new Intent(Quiz.this, Activities.class);
+            i.putExtra("frgToLoad", 1);
+
+            startActivity(i);
         } else {
             mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
             mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
