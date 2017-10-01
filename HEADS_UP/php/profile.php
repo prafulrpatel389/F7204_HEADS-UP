@@ -3,26 +3,26 @@
   require "connect.php";
   // Define Variables
   $username = $_POST["username"];
-  $name =  $_POST["user_name"];
-  $zip = $_POST["user_zip"];
-  $email = $_POST["user_email"];
+  $user_name =  $_POST["user_name"];
+  $user_zip = $_POST["user_zip"];
+  $user_email = $_POST["user_email"];
 
 
-  $sqlN = "UPDATE user_profiles SET name = '$name' WHERE username = '$username' ";
-  $sqlE = "UPDATE user_profiles SET email = '$email' WHERE username = '$username' ";
-  $sqlZ = "UPDATE user_profiles SET zipcode = '$zip' WHERE username = '$username' ";
+  $sqlN = "UPDATE user_profiles SET name = '$user_name' WHERE username = '$username' ";
+  $sqlE = "UPDATE user_profiles SET email = '$user_email' WHERE username = '$username' ";
+  $sqlZ = "UPDATE user_profiles SET zipcode = '$user_zip' WHERE username = '$username' ";
 
-  if (!empty($name)) {
+  if (!empty($user_name)) {
     $con->query($sqlN);
-    echo "name";
+    echo "Profile Editing Successful";
   }
-  if (!empty($email)) {
+  if (!empty($user_email)) {
     $con->query($sqlE);
-    echo "email";
+    echo "Profile Editing Successful";
   }
-  if (!empty($zip)) {
+  if (!empty($user_zip)) {
     $con->query($sqlZ);
-    echo "zip";
+    echo "Profile Editing Successful";
   }
 
 

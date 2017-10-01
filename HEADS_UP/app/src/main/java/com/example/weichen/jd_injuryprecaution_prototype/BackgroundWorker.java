@@ -127,6 +127,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 String name = params[1];
                 String zip = params[2];
                 String email = params[3];
+                String username = params[4];
 
 
                 URL url = new URL(profile_url);
@@ -137,7 +138,8 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoOutput(true);
                 OutputStream outputStream  = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("user_name", "UTF-8")+"="+URLEncoder.encode(name, "UTF-8")+"&"
+                String post_data = URLEncoder.encode("username", "UTF-8")+"="+URLEncoder.encode(username, "UTF-8")+"&"
+                        + URLEncoder.encode("user_name", "UTF-8")+"="+URLEncoder.encode(name, "UTF-8")+"&"
                         +URLEncoder.encode("user_zip", "UTF-8")+"="+URLEncoder.encode(zip, "UTF-8")+"&"
                         +URLEncoder.encode("user_email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8");
                 bufferedWriter.write(post_data);

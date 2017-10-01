@@ -1,5 +1,6 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import android.content.SharedPreferences;
 public class Profile extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -136,10 +137,10 @@ public class Profile extends AppCompatActivity {
         String _name = name.getText().toString();
 
         String type = "profile";
-
-
+        SharedPreferences sharedPreferences = getSharedPreferences("user_pass", Context.MODE_PRIVATE);
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, _name, _zipcode, _email);
+
+        backgroundWorker.execute(type, _name, _zipcode, _email, sharedPreferences.getString("username", ""));
 
 
 
