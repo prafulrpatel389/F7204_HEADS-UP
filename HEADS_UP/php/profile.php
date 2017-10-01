@@ -6,6 +6,7 @@
   $user_name =  $_POST["user_name"];
   $user_zip = $_POST["user_zip"];
   $user_email = $_POST["user_email"];
+  $editprofile = 0;
 
 
   $sqlN = "UPDATE user_profiles SET name = '$user_name' WHERE username = '$username' ";
@@ -14,14 +15,18 @@
 
   if (!empty($user_name)) {
     $con->query($sqlN);
-    echo "Profile Editing Successful";
+    $editprofile = 1;
   }
   if (!empty($user_email)) {
     $con->query($sqlE);
-    echo "Profile Editing Successful";
+    $editprofile = 1;
   }
   if (!empty($user_zip)) {
     $con->query($sqlZ);
+    $editprofile = 1;
+  }
+
+  if ($editprofile == 1) {
     echo "Profile Editing Successful";
   }
 

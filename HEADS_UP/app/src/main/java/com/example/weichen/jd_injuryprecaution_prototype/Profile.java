@@ -37,12 +37,6 @@ public class Profile extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email_change);
 
 
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Profile.this, "Profile Editing Successful", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         password.setOnClickListener(new View.OnClickListener() {
             @Override
