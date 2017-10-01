@@ -1,6 +1,8 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -42,6 +44,12 @@ public class Login extends AppCompatActivity {
         String _username = username.getText().toString();
         String _password = password.getText().toString();
         String type = "login";
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_pass", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editot = sharedPreferences.edit();
+        editot.putString("username", _username);
+        editot.putString("password", _password);
+        editot.commit();
 
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);

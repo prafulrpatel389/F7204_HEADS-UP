@@ -1,6 +1,6 @@
 <?php
 
-  include "login.php";
+  include "connect.php";
 
   $username = $_POST["username"];
   $oldPass = $_POST["oldPass"];
@@ -16,7 +16,7 @@
     $con->query($sql);
     echo "Password change successful";
   } else {
-    echo "Password matched unsuccessful";
+    echo "Current password is not matched";
   }
   $con ->close();
 

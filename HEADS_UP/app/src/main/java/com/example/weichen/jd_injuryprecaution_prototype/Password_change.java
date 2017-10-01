@@ -1,5 +1,7 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,29 +27,29 @@ public class Password_change extends AppCompatActivity {
         button = (Button) findViewById(R.id.password_change_button);
 
         oldPass = (EditText) findViewById(R.id.oldPass);
-
         newPass = (EditText) findViewById(R.id.newPass);
-
         cf_newPass = (EditText) findViewById(R.id.cf_newPass);
-
-
 
     }
 
     public void pass_change(View view) {
 
-        String type, _newPass, _cf_newPass;
+        String type, _newPass, _oldPass;
 
-        if (oldPass.getText().toString().equals(newPass.getText().toString()) == false) {
+        if (newPass.getText().toString().equals(cf_newPass.getText().toString()) == false) {
             Toast.makeText(Password_change.this, "Passwords are not matched!", Toast.LENGTH_SHORT).show();
         } else {
+
+            _oldPass = oldPass.getText().toString();
             _newPass = newPass.getText().toString();
-            _cf_newPass = oldPass.getText().toString();
+
             type = "password";
+
+            SharedPreferences sharedPreferences = getSharedPreferences("user_pass", Context.MODE_PRIVATE);
 
 
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-            backgroundWorker.execute(type, _newPass, _cf_newPass);
+            backgroundWorker.execute(type, _oldPass, _newPass, sharedPreferences.getString("username", ""));
         }
 
 

@@ -165,9 +165,9 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
 
         if (type.equals("password")) {
             try {
-                String username = params[1];
-                String oldPass = params[2];
-                String newPass = params[3];
+                String username = params[3];
+                String oldPass = params[1];
+                String newPass = params[2];
 
                 URL url = new URL(password_url);
 
@@ -230,6 +230,10 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         if (result.equals("Profile Editing Successful")) {
             context.startActivity(new Intent(context, MainActivity.class));
         }
+        if (result.equals("Password change successful")) {
+            context.startActivity(new Intent(context, Profile.class));
+        }
+
 
     }
 
