@@ -1,15 +1,17 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Password_change extends AppCompatActivity {
 
     private Button button;
+    EditText oldPass, newPass, cf_newPass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +21,34 @@ public class Password_change extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+
         button = (Button) findViewById(R.id.password_change_button);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Password_change.this, "Password Change Successful", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Password_change.this, Profile.class));
-            }
-        });
+        oldPass = (EditText) findViewById(R.id.oldPass);
+
+        newPass = (EditText) findViewById(R.id.newPass);
+
+        cf_newPass = (EditText) findViewById(R.id.cf_newPass);
+
+
+
+    }
+
+    public void pass_change(View view) {
+
+        String type, _newPass, _cf_newPass;
+
+        if (oldPass.getText().toString().equals(newPass.getText().toString()) == false) {
+            Toast.makeText(Password_change.this, "Passwords are not matched!", Toast.LENGTH_SHORT).show();
+        } else {
+            _newPass = newPass.getText().toString();
+            _cf_newPass = oldPass.getText().toString();
+            type = "password";
+
+
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            backgroundWorker.execute(type, _newPass, _cf_newPass);
+        }
 
 
     }
