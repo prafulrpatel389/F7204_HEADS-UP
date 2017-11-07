@@ -24,7 +24,7 @@ public class GroupFunc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_func);
 
-        fab = (FloatingActionButton)findViewById(R.id.groups_add);
+        fab = (FloatingActionButton) findViewById(R.id.groups_add);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,4 +43,5 @@ public class GroupFunc extends AppCompatActivity {
             }
         });
 
+    }
 }
