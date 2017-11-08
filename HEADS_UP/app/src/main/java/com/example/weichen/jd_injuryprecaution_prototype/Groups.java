@@ -140,4 +140,7 @@ public class Groups extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void enterGroupA(View view) {startActivity(new Intent(Groups.this, GroupFunc.class));
+    }
 }
