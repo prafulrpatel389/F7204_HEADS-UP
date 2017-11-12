@@ -12,6 +12,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom = "true">
 
+
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/articles_listView"/>
+
+
+
+
+
+
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/articles_bottom_navigation"
             android:layout_width="match_parent"
@@ -21,14 +34,6 @@
             app:itemIconTint="@drawable/bott_nav_color_state"
             app:itemTextColor="@drawable/bott_nav_color_state"
             app:menu="@menu/bottom_navigation_main"/>
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/articles"
-            android:layout_alignParentTop="true" />
-
 
     </RelativeLayout>
 

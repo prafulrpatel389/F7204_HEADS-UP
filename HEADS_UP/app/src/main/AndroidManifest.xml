@@ -13,10 +13,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="Home"></activity>
+            android:label="Home" />
         <activity
             android:name=".Initial"
-            android:label="Hello &amp; Welcome!"></activity>
+            android:label="Hello &amp; Welcome!" />
         <activity
             android:name=".Login"
             android:label="Login" />
@@ -72,7 +72,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GroupFunc"></activity>
+        <activity android:name=".GroupFunc" />
+        <activity
+            android:name=".Articles_view"
+            android:label="Articles"/>
     </application>
 
 </manifest>

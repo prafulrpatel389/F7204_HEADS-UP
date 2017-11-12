@@ -12,39 +12,55 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="59dp"
-        android:text="Send Link" />
+        android:layout_marginBottom="90dp"
+        android:text="Reset Password"
+        android:onClick="toResetPass"/>
 
     <EditText
         android:id="@+id/forgot_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/forgot_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/forgot_name"
+        android:layout_marginTop="41dp"
         android:ems="10"
         android:hint="Username"
-        android:inputType="textPersonName"
-        android:layout_above="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="49dp" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/forgot_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/forgot_sendLink"
-        android:layout_alignEnd="@+id/forgot_username"
-        android:layout_alignRight="@+id/forgot_username"
-        android:layout_marginBottom="73dp"
+        android:layout_below="@+id/forgot_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/textView6"
+
+    <EditText
+        android:id="@+id/forgot_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/forgot_email"
+        android:layout_alignLeft="@+id/forgot_email"
+        android:layout_alignStart="@+id/forgot_email"
+        android:layout_below="@+id/forgot_username"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/forgot_newPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forgot_email"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"
-        android:text="OR"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="New Password"
+        android:inputType="textPersonName" />
+
 </RelativeLayout>
