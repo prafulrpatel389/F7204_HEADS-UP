@@ -1,114 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.weichen.jd_injuryprecaution_prototype.GroupFunc"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:context="com.example.weichen.jd_injuryprecaution_prototype.MainActivity"
+    android:id="@+id/group_func_drawerLayout"
+    android:label="Home" >
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="bottom|end"
-        android:onClick="addTasks"
-        app:backgroundTint="@color/colorPrimaryDark"
-        app:fabSize="normal"
-        app:rippleColor="@color/colorPrimaryDark"
-        app:srcCompat="@android:drawable/ic_input_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_alignParentBottom = "true">
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/membersToadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="65dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:fabSize="normal"
+            app:rippleColor="@color/colorPrimaryDark"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:onClick="addTasks"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="84dp"
-        android:layout_height="96dp"
-        app:srcCompat="@drawable/bill_belichick"
-        android:layout_marginTop="64dp"
-        app:layout_constraintTop_toTopOf="@+id/textView22"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/group_func_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:foregroundGravity="bottom"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@drawable/bott_nav_color_state"
+            app:itemTextColor="@drawable/bott_nav_color_state"
+            app:menu="@menu/bottom_navigation_main" />
 
-    <TextView
-        android:id="@+id/textView21"
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="@dimen/picture"
+            android:layout_height="@dimen/picture"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            app:srcCompat="@drawable/bill_belichick"
+            android:layout_marginBottom="26dp"
+            android:layout_above="@+id/imageView16"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="@dimen/picture"
+            android:layout_height="@dimen/picture"
+            app:srcCompat="@drawable/dan_quinn"
+            android:layout_above="@+id/membersToadd"
+            android:layout_alignLeft="@+id/imageView15"
+            android:layout_alignStart="@+id/imageView15"
+            android:layout_marginBottom="102dp" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="@dimen/picture"
+            android:layout_height="@dimen/picture"
+            app:srcCompat="@drawable/pete_carroll"
+            android:layout_marginBottom="24dp"
+            android:layout_alignBottom="@+id/membersToadd"
+            android:layout_alignLeft="@+id/imageView16"
+            android:layout_alignStart="@+id/imageView16" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView15"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_toEndOf="@+id/imageView15"
+            android:layout_toRightOf="@+id/imageView15"
+            android:text="Bill Belichick"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView28"
+            android:layout_alignStart="@+id/textView28"
+            android:layout_below="@+id/textView27"
+            android:layout_marginTop="12dp"
+            android:text="55 Points" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView30"
+            android:layout_alignStart="@+id/textView30"
+            android:layout_below="@+id/textView29"
+            android:layout_marginTop="16dp"
+            android:text="75 Points" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView25"
+            android:layout_alignStart="@+id/textView25"
+            android:layout_below="@+id/textView25"
+            android:layout_marginTop="13dp"
+            android:text="90 Points" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView26"
+            android:layout_alignStart="@+id/textView26"
+            android:layout_alignTop="@+id/imageView17"
+            android:text="Pete Carroll"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView25"
+            android:layout_alignLeft="@+id/textView26"
+            android:layout_alignRight="@+id/textView25"
+            android:layout_alignStart="@+id/textView26"
+            android:layout_alignTop="@+id/imageView16"
+            android:text="Dan Quinn"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Group A"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/textView25"
+            android:layout_alignLeft="@+id/imageView15"
+            android:layout_alignStart="@+id/imageView15" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/group_func_top_navigation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bill Belichick"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="69dp"
-        android:layout_marginRight="184dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.886" />
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/top_action_bar" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="79dp"
-        android:layout_height="35dp"
-        android:text="Group A"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        tools:layout_editor_absoluteY="5dp"
-        android:layout_marginRight="289dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="94dp"
-        android:layout_height="155dp"
-        app:srcCompat="@drawable/dan_quinn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="191dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="95dp"
-        android:layout_height="214dp"
-        app:srcCompat="@drawable/pete_carroll"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dan Quinn"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="301dp"
-        android:layout_marginRight="198dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pete Carroll"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_marginBottom="151dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginRight="187dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0" />
-
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.DrawerLayout>
