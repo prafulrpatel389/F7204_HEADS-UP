@@ -26,8 +26,6 @@ public class Status extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
-
-
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.status_container);
         setupViewPager(mViewPager);
@@ -77,8 +75,6 @@ public class Status extends AppCompatActivity {
             }
         });
 
-
-
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.status_bottom_navigation);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem memuItem = menu.getItem(1);
@@ -109,7 +105,6 @@ public class Status extends AppCompatActivity {
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
     }
-
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());

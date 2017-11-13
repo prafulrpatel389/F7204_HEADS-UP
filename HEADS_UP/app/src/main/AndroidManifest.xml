@@ -53,6 +53,7 @@
         <activity
             android:name=".Setting"
             android:label="Setting" />
+        <activity android:name=".Task" />
         <activity android:name=".Activities_tasks" />
         <activity android:name=".Activities_quizzes" />
         <activity android:name=".Activities_surveys" />

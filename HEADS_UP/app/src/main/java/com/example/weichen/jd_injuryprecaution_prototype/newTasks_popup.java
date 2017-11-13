@@ -1,15 +1,17 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 public class newTasks_popup extends AppCompatActivity {
 
-    private static String[] tasks_type = new String[]{"Daily Training", "Pre-game Training", "Game Time", "Post-game Recover"};
+    private static String[] tasks_type = new String[]{"Daily Training", "Pre-game Training", "Game Time", "Post-game Recovery"};
     private Spinner type;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +22,6 @@ public class newTasks_popup extends AppCompatActivity {
         ArrayAdapter<String> classAdpt = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tasks_type);
         classAdpt.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         type.setAdapter(classAdpt);
+
     }
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="169dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="25dp">
+
+        <LinearLayout
+            android:layout_width="368dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="223dp">
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Type:" />
+
+            <TextView
+                android:id="@+id/tv_type_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily Training" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="181dp">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Date:" />
+
+            <TextView
+                android:id="@+id/tv_date_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2/20/17" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="181dp">
+
+            <Button
+                android:id="@+id/bCancel"
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="274dp" />
+
+            <Button
+                android:id="@+id/bComplete"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:text="Complete"
+                tools:layout_editor_absoluteX="196dp"
+                tools:layout_editor_absoluteY="274dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

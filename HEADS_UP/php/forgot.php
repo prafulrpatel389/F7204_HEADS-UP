@@ -12,13 +12,13 @@
 
 
   $sql = "UPDATE user_profiles SET password = '$newPass' WHERE username = '$username' ";
-  
+
 
   if(mysqli_num_rows($result) > 0) {
     $con->query($sql);
     echo "Password Reset Successful";
   } else {
-    echo "Invial Information ";
+    echo "Invalid Information ";
   }
 
 ?>
