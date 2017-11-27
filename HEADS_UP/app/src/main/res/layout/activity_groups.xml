@@ -11,23 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom = "true">
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/groups_add"
+
+        <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="65dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginRight="18dp"
-            app:backgroundTint="@color/colorPrimaryDark"
-            app:fabSize="normal"
-            app:rippleColor="@color/colorPrimaryDark"
-            app:srcCompat="@android:drawable/ic_input_add"
-            android:onClick="addTasks"/>
-
+            android:id="@+id/group_list" />
 
 
         <android.support.design.widget.BottomNavigationView
@@ -40,36 +28,36 @@
             app:itemTextColor="@drawable/bott_nav_color_state"
             app:menu="@menu/bottom_navigation_main"/>
 
-        <ImageView
-            android:id="@+id/GroupA"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="31dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginTop="19dp"
-            android:onClick="enterGroupA"
-            app:srcCompat="@drawable/group_a" />
+        <!--<ImageView-->
+            <!--android:id="@+id/GroupA"-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="130dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginLeft="31dp"-->
+            <!--android:layout_marginStart="31dp"-->
+            <!--android:layout_marginTop="19dp"-->
+            <!--android:onClick="enterGroupA"-->
+            <!--app:srcCompat="@drawable/group_a" />-->
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            app:srcCompat="@drawable/group_b"
-            android:layout_alignTop="@+id/GroupA"
-            android:layout_toLeftOf="@+id/groups_add"
-            android:layout_toStartOf="@+id/groups_add" />
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            app:srcCompat="@drawable/group_c"
-            android:layout_below="@+id/GroupA"
-            android:layout_alignLeft="@+id/GroupA"
-            android:layout_alignStart="@+id/GroupA"
-            android:layout_marginTop="43dp" />
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView2"-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="130dp"-->
+            <!--app:srcCompat="@drawable/group_b"-->
+            <!--android:layout_alignTop="@+id/GroupA"-->
+            <!--android:layout_toLeftOf="@+id/groups_add"-->
+            <!--android:layout_toStartOf="@+id/groups_add" />-->
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView3"-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="130dp"-->
+            <!--app:srcCompat="@drawable/group_c"-->
+            <!--android:layout_below="@+id/GroupA"-->
+            <!--android:layout_alignLeft="@+id/GroupA"-->
+            <!--android:layout_alignStart="@+id/GroupA"-->
+            <!--android:layout_marginTop="43dp" />-->
 
 
     </RelativeLayout>

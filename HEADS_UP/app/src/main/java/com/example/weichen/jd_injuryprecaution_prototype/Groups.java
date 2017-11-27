@@ -1,6 +1,10 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,36 +17,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.weichen.jd_injuryprecaution_prototype.db.Group_db;
+import com.example.weichen.jd_injuryprecaution_prototype.db.Group_dbHelper;
+
+import java.util.ArrayList;
 
 public class Groups extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    private FloatingActionButton fab;
+    private static final String TAG = "Groups";
+    private Group_dbHelper mHelper;
+    private ListView mGroupListView;
+    private ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_groups);
-
-        fab = (FloatingActionButton)findViewById(R.id.groups_add);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder rBuilder = new AlertDialog.Builder(Groups.this);
-                View mView = getLayoutInflater().inflate(R.layout.new_group_add, null);
-                final Button button = (Button) mView.findViewById(R.id.new_group_button);
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(Groups.this, Groups.class));
-                    }
-                });
-                rBuilder.setView(mView);
-                AlertDialog dialog = rBuilder.create();
-                dialog.show();
-            }
-        });
 
 
 
@@ -119,28 +116,88 @@ public class Groups extends AppCompatActivity {
             }
         });
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+
+        mHelper = new Group_dbHelper(this);
+        mGroupListView = (ListView) findViewById(R.id.group_list);
+        updateUI();
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.action_setting, menu);
+        getMenuInflater().inflate(R.menu.group_menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (mToggle.onOptionsItemSelected(item)){
-            return  true;
-        } else if (id == R.id.actionBar_setting){
-            startActivity(new Intent(Groups.this, Setting.class));
+        switch(item.getItemId()) {
+            case R.id.action_add_group:
+                final EditText groupEditText = new EditText(this);
+                AlertDialog dialog = new AlertDialog.Builder(this)
+                        .setTitle("New Group")
+                        .setMessage("Add a new Group")
+                        .setView(groupEditText)
+                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogue, int which) {
+                                String task = String.valueOf(groupEditText.getText());
+                                SQLiteDatabase db = mHelper.getWritableDatabase();
+                                ContentValues values = new ContentValues();
+                                values.put(Group_db.GroupEntry.COL_GROUP_TITLE, task);
+                                db.insertWithOnConflict(Group_db.GroupEntry.TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+                                db.close();
+                                updateUI();
+                            }
+                        })
+                        .setNegativeButton("Cancel", null)
+                        .create();
+                dialog.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void updateUI() {
+        ArrayList<String> taskList = new ArrayList<>();
+        SQLiteDatabase db = mHelper.getReadableDatabase();
+        Cursor cursor = db.query(Group_db.GroupEntry.TABLE,
+                new String[] {Group_db.GroupEntry.COL_GROUP_TITLE}, null, null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            int index = cursor.getColumnIndex(Group_db.GroupEntry.COL_GROUP_TITLE);
+            taskList.add(cursor.getString(index));
+        }
+
+        if (mAdapter == null) {
+            mAdapter = new ArrayAdapter<String>(this, R.layout.group_item, R.id.group_title, taskList);
+            mGroupListView.setAdapter(mAdapter);
+
+        } else {
+            mAdapter.clear();
+            mAdapter.addAll(taskList);
+            mAdapter.notifyDataSetChanged();
+        }
+
+        cursor.close();
+        db.close();
     }
 
     public void enterGroupA(View view) {startActivity(new Intent(Groups.this, GroupFunc.class));
+    }
+
+    public void leaveGroup(View view) {
+        View parent = (View) view.getParent();
+        TextView taskTextView = (TextView) parent.findViewById(R.id.group_title);
+        String task = String.valueOf(taskTextView.getText());
+        SQLiteDatabase db = mHelper.getWritableDatabase();
+        db.delete(Group_db.GroupEntry.TABLE, Group_db.GroupEntry.COL_GROUP_TITLE + " = ?", new String[] {task});
+        db.close();
+        updateUI();
+
     }
 }
