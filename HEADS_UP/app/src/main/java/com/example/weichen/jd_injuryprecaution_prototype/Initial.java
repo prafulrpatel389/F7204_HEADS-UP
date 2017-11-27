@@ -12,7 +12,7 @@ public class Initial extends AppCompatActivity {
     private Button login;
     private Button register;
     private Button about;
-    Typeface gothambold, gothambolditalic;
+    Typeface gothambold;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

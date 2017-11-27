@@ -18,14 +18,14 @@ tools:context="com.example.weichen.jd_injuryprecaution_prototype.Surveys">
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-    <TextView
-        android:id="@+id/question1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:padding="8dp"
-        android:text="Survey Question 1"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/question1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="8dp"
+            android:text="Survey Question 1"
+            android:textSize="20sp" />
 
     <TextView
         android:id="@+id/question1Content"
@@ -93,15 +93,15 @@ tools:context="com.example.weichen.jd_injuryprecaution_prototype.Surveys">
         android:ems="10"
         android:inputType="textMultiLine" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="save"
-        android:background="#118575"
-        android:textColor="#fff"
-        android:padding="8dp"
-        android:layout_marginBottom="24dp"
-        android:id="@+id/save"/>
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@color/cdc_green"
+            android:padding="8dp"
+            android:text="save"
+            android:textColor="#fff" />
 
     <Button
         android:layout_width="match_parent"
