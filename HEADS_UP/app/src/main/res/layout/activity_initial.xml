@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorWhite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.weichen.jd_injuryprecaution_prototype.Initial"
@@ -11,38 +12,57 @@
         android:id="@+id/initial_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="200dp"
         android:layout_above="@+id/initial_register"
         android:layout_alignLeft="@+id/initial_register"
         android:layout_alignStart="@+id/initial_register"
-        android:layout_marginBottom="29dp"
-        android:onClick="toLoginLayout"/>
+        android:layout_marginBottom="27dp"
+        android:background="@color/cdc_light_green"
+        android:onClick="toLoginLayout"
+        android:text="Login"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="200dp" />
 
 
     <Button
         android:id="@+id/initial_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="register"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="283dp"
         android:layout_above="@+id/initial_about"
         android:layout_alignLeft="@+id/initial_about"
         android:layout_alignStart="@+id/initial_about"
-        android:layout_marginBottom="22dp"
-        android:onClick="toRegisterLayout"/>
+        android:layout_marginBottom="27dp"
+        android:background="@color/cdc_light_green"
+        android:onClick="toRegisterLayout"
+        android:text="REGISTER"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="283dp" />
 
     <Button
         android:id="@+id/initial_about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="about"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="367dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="163dp"
-        android:onClick="toAboutLayout"/>
+        android:layout_marginBottom="46dp"
+        android:background="@color/cdc_light_green"
+        android:onClick="toAboutLayout"
+        android:text="about"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="367dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/initial_login"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="47dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="CDC HEADS UP Logo"
+        android:cropToPadding="true"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:srcCompat="@drawable/headsup_newlogo" />
 </RelativeLayout>

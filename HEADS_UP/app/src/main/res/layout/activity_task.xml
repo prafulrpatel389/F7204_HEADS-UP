@@ -66,6 +66,7 @@
                 android:id="@+id/bCancel"
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
+                android:background="@color/cdc_light_green"
                 android:text="Cancel"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="274dp" />
@@ -74,6 +75,7 @@
                 android:id="@+id/bComplete"
                 android:layout_width="172dp"
                 android:layout_height="wrap_content"
+                android:background="@color/cdc_light_green"
                 android:text="Complete"
                 tools:layout_editor_absoluteX="196dp"
                 tools:layout_editor_absoluteY="274dp" />

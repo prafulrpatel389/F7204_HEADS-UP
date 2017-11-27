@@ -10,14 +10,15 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_marginBottom="108dp"
+        android:layout_toLeftOf="@+id/login_button_login"
+        android:layout_toStartOf="@+id/login_button_login"
         android:text="Username"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/cdc_green"
         tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="126dp"
-        android:layout_marginBottom="108dp"
-        android:layout_above="@+id/textView2"
-        android:layout_toLeftOf="@+id/login_button_login"
-        android:layout_toStartOf="@+id/login_button_login" />
+        tools:layout_editor_absoluteY="126dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -28,6 +29,7 @@
         android:layout_centerVertical="true"
         android:text="Password"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/cdc_green"
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="214dp" />
 
@@ -62,8 +64,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="61dp"
-        android:text="Login"
-        android:onClick="toMainLayout"/>
+        android:background="@color/cdc_light_green"
+        android:onClick="toMainLayout"
+        android:text="Login" />
 
     <TextView
         android:id="@+id/login_forgot"
@@ -72,11 +75,11 @@
         android:layout_above="@+id/login_button_login"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="29dp"
+        android:onClick="toForgotLayout"
         android:text="I can't Login"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHighlight="@color/colorPrimary"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:onClick="toForgotLayout"
-        />
+        android:textStyle="bold" />
 </RelativeLayout>

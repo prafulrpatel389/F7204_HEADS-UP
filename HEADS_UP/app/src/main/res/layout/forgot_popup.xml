@@ -8,17 +8,18 @@
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:layout_marginTop="5dp"
-        android:text="A Password reset link has send." />
+        android:text="A Password reset link has send."
+        android:textColor="@color/cdc_light_green"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:text="Please click HERE to Login again. "
-        android:textColor="@android:color/holo_blue_dark"/>
+        android:textColor="@color/cdc_green"
+        android:textSize="20sp" />
 </LinearLayout>
