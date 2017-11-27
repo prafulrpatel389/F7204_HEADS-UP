@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="Complete"
-        android:onClick="completeTask"/>
+        android:background="@color/cdc_light_green"
+        android:onClick="completeTask"
+        android:text="Complete" />
 
 </RelativeLayout>

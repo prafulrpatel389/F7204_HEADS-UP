@@ -13,13 +13,14 @@
         android:textSize="20sp"/>
 
     <Button
+        android:id="@+id/group_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/group_delete"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/cdc_light_green"
         android:onClick="enterGroupA"
-        android:text="View"/>
+        android:text="View" />
 
     <Button
         android:id="@+id/button"
@@ -30,7 +31,8 @@
         android:layout_marginRight="19dp"
         android:layout_toLeftOf="@+id/group_delete"
         android:layout_toStartOf="@+id/group_delete"
-        android:text="Leave"
-        android:onClick="leaveGroup"/>
+        android:background="@color/cdc_light_green"
+        android:onClick="leaveGroup"
+        android:text="Leave" />
 
 </RelativeLayout>
