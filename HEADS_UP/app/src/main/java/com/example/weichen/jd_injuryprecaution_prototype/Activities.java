@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class Activities extends AppCompatActivity {
 
@@ -21,11 +22,18 @@ public class Activities extends AppCompatActivity {
     private SectionsPageAdapter mSectionsPageAdapter;
     private ViewPager mViewPager;
 
+    private Activities_tasks fragmentTasks;
+    private Activities_quizzes fragmentQuizzes;
+    private Activities_surveys fragmentSurveys;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities);
 
+        fragmentTasks   = new Activities_tasks();
+        fragmentQuizzes = new Activities_quizzes();
+        fragmentSurveys = new Activities_surveys();
 
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -127,9 +135,9 @@ public class Activities extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Activities_tasks(), "Tasks");
-        adapter.addFragment(new Activities_quizzes(), "Quizzes");
-        adapter.addFragment(new Activities_surveys(), "Surveys");
+        adapter.addFragment(fragmentTasks, "Tasks");
+        adapter.addFragment(fragmentQuizzes, "Quizzes");
+        adapter.addFragment(fragmentSurveys, "Surveys");
         viewPager.setAdapter(adapter);
     }
 
@@ -150,5 +158,9 @@ public class Activities extends AppCompatActivity {
             startActivity(new Intent(Activities.this, Setting.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void completeTask(View view) {
+        fragmentTasks.completeTask(view);
     }
 }
