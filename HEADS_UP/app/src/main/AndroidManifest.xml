@@ -68,6 +68,7 @@
             android:name=".begin"
             android:label="Concussion Safety Challenge">
 
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

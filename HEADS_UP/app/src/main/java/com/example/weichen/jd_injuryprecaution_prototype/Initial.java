@@ -1,6 +1,7 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,7 @@ public class Initial extends AppCompatActivity {
     private Button login;
     private Button register;
     private Button about;
+    Typeface gothambold, gothambolditalic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,12 @@ public class Initial extends AppCompatActivity {
         login = (Button) findViewById(R.id.initial_login);
         register = (Button) findViewById(R.id.initial_register);
         about = (Button) findViewById(R.id.initial_about);
+
+        gothambold = Typeface.createFromAsset(getAssets(),"gothambold.ttf");
+        login.setTypeface(gothambold);
+        register.setTypeface(gothambold);
+        about.setTypeface(gothambold);
+
     }
 
     /**

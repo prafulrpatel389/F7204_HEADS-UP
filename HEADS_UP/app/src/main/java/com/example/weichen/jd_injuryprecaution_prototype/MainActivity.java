@@ -1,6 +1,7 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,16 +11,37 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+    Typeface gothambold, gothambolditalic, gothambook, gothambookitalic,
+            gothamlight, gothamlightitalic, gothammedium, gothammedium_1,
+            gothammediumitalic;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        gothambold = Typeface.createFromAsset(getAssets(),"gothambold.ttf");
+        gothambolditalic = Typeface.createFromAsset(getAssets(),"gothambolditalic.ttf");
+        gothambook = Typeface.createFromAsset(getAssets(),"gothambook.ttf");
+        gothambookitalic = Typeface.createFromAsset(getAssets(),"gothambookitalic.ttf");
+        gothamlight = Typeface.createFromAsset(getAssets(),"gothamlight.ttf");
+        gothamlightitalic = Typeface.createFromAsset(getAssets(),"gothamlightitalic.ttf");
+        gothammedium = Typeface.createFromAsset(getAssets(),"gothammedium.ttf");
+        gothammedium_1 = Typeface.createFromAsset(getAssets(),"gothammedium_1.ttf");
+        gothammediumitalic = Typeface.createFromAsset(getAssets(),"gothammediumitalic.ttf");
+
+
+
 
 
 
