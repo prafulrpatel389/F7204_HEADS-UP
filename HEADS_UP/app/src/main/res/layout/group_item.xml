@@ -4,13 +4,20 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/group_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/group_title"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@+id/button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button"
+        android:gravity="center"
+        android:textAlignment="viewStart"
         android:text="Hi"
-        android:textSize="20sp"/>
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/group_delete"
@@ -18,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
         android:background="@color/cdc_light_green"
         android:onClick="enterGroupA"
         android:text="View" />
@@ -27,6 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:layout_toLeftOf="@+id/group_delete"

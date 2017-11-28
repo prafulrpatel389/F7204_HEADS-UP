@@ -91,21 +91,21 @@
 
         <Button
             android:id="@+id/password_changes"
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/zipcode_change"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="20dp"
             android:background="@color/cdc_light_green"
             android:text="Password Change" />
 
         <Button
             android:id="@+id/edit_profile"
-            android:layout_width="wrap_content"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/password_changes"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:background="@color/cdc_light_green"
             android:onClick="editProfile"
             android:text="Edit" />
