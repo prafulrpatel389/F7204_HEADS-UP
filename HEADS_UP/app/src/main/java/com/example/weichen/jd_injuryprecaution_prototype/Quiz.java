@@ -35,6 +35,8 @@ public class Quiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
         mQuestionView = (TextView)findViewById(R.id.question);
+        mScoreView = (TextView)findViewById(R.id.score);
+        mScoreView.setText(String.valueOf(mScore));
 
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
@@ -54,8 +56,14 @@ public class Quiz extends AppCompatActivity {
         mButtonChoice1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                //My logic for Button goes in here
-                updateQuestion();
+                if (mButtonChoice1.getText().equals(mAnswer)){
+                    mScore = mScore + 1;
+                    updateScore(mScore);
+                    updateQuestion();
+
+                }else {
+                    updateQuestion();
+                }
             }
         });
 
@@ -67,7 +75,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View view){
                 //My logic for Button goes in here
 
-                if (mButtonChoice2.getText() == mAnswer){
+                if (mButtonChoice2.getText().equals(mAnswer)){
                     mScore = mScore + 1;
                     updateScore(mScore);
                     updateQuestion();
@@ -87,7 +95,7 @@ public class Quiz extends AppCompatActivity {
             public void onClick(View view){
                 //My logic for Button goes in here
 
-                if (mButtonChoice3.getText() == mAnswer){
+                if (mButtonChoice3.getText().equals(mAnswer)){
                     mScore = mScore + 1;
                     updateScore(mScore);
                     updateQuestion();
@@ -117,10 +125,10 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void updateQuestion(){
-
         mQuestionNumber = getCurrentQuestion();
+        mAnswer = mQuizQuestionLibrary.getCorrectAnswer(mQuestionNumber);
 
-        if (mQuestionNumber > 3) {
+        if (mQuestionNumber > 2) {
             Intent i = new Intent(Quiz.this, Activities.class);
             i.putExtra("frgToLoad", 1);
 
@@ -154,6 +162,6 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void updateScore(int point) {
-        mScoreView.setText("" + mScore);
+        mScoreView.setText(String.valueOf(mScore));
     }
 }

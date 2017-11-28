@@ -14,53 +14,35 @@
         android:layout_height="wrap_content">
 
 
-    <TextView
-        android:id="@+id/main_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New messages from Group A"
-        android:textSize="20dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="186dp" />
-    <TextView
-        android:id="@+id/main_surveys"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Surveys appear"
-        android:textSize="20dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="46dp"
-        android:layout_alignTop="@+id/main_group"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/main_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="186dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/main_quizzes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Quizzes appear"
-        android:textSize="20dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/main_surveys"
-        android:layout_alignRight="@+id/main_surveys"
-        android:layout_alignEnd="@+id/main_surveys" />
+        <TextView
+            android:id="@+id/main_surveys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/main_group"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="46dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/main_welcome"
@@ -91,9 +73,10 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/main_group"
+            android:layout_above="@+id/textView17"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="64dp"
+            android:duplicateParentState="false"
+            android:elevation="0dp"
             android:text="Current Score"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@android:color/background_dark"
@@ -105,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/main_group"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="17dp"
+            android:layout_marginBottom="11dp"
             android:text="638"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@android:color/holo_orange_dark"
@@ -115,13 +98,9 @@
             android:id="@+id/imageView8"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:src="@drawable/main"
-            android:layout_above="@+id/textView15"
             android:layout_below="@+id/main_welcome"
-            android:layout_alignLeft="@+id/main_quizzes"
-            android:layout_alignStart="@+id/main_quizzes"
-            android:layout_alignRight="@+id/main_surveys"
-            android:layout_alignEnd="@+id/main_surveys" />
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/main" />
 
     </RelativeLayout>
 

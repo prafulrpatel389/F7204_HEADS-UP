@@ -7,22 +7,29 @@ package com.example.weichen.jd_injuryprecaution_prototype;
 public class QuizQuestionLibrary {
 
     private String mQuestions [] = {
-            "Quiz question 1",
-            "Quiz question 2",
-            "Quiz question 3",
-            "Quiz question 4"
+            "A concussion is a...\n\n" +
+                "A. type of traumatic brain injury (TBI)\n" +
+                "B. a brain bruise\n" +
+                "C. loud siren heard far away.",
+            "When can concussions occur?\n\n" +
+                "A. only during contact sports\n" +
+                "B. only when an individual loses consciousness\n" +
+                "C. in any activity regardless of whether someone loses consciousness",
+            "How do you identify a concussion?\n\n" +
+                "A. by looking at CT or MRI scans of the brain\n" +
+                "B. by watching for difference signs and symptoms\n" +
+                "C. by asking if the athlete had their \"bell rung\" in the last hit",
     };
 
 
     private String mChoices [][] = {
-            {"Yes", "Maybe", "No"},
-            {"Yes", "Maybe", "No"},
-            {"Yes", "Maybe", "No"},
-            {"Yes", "Maybe", "No"}
+            {"A", "B", "C"},
+            {"A", "B", "C"},
+            {"A", "B", "C"}
     };
 
 
-    private String mCorrectAnswers[] = {"Roots", "Leaves", "Flower", "Stem"};
+    private String mCorrectAnswers[] = {"A", "C", "B"};
 
 
     public String getQuestion(int a) {

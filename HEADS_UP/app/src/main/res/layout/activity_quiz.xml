@@ -11,39 +11,39 @@ android:paddingTop="@dimen/activity_vertical_margin"
 android:orientation="vertical"
 tools:context="com.example.weichen.jd_injuryprecaution_prototype.Quiz">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:layout_marginBottom="40dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Score"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="0"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/question"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Score"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/score_text"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/score"
-        android:layout_alignParentRight="true"
-        android:text="0"
-        android:textSize="20sp"/>
-
-</RelativeLayout>
-
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="70dp"
-    android:text="Which thing is alive?"
-    android:textSize="20sp"
-    android:padding="8dp"
-    android:layout_marginBottom="40dp"
-    android:id="@+id/question"/>
-
+        android:layout_marginBottom="24dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/choice1"
