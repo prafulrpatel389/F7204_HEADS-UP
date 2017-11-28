@@ -21,9 +21,11 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
+            android:clickable="true"
+            android:editable="false"
             android:textSize="15dp"
             android:ems="10"
-            android:hint="Date"
+            android:hint="Date (click for calendar view)"
             android:inputType="textPersonName" />
 
         <LinearLayout
@@ -53,8 +55,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView9"
-                android:textSize="15dp"
-                android:entries="@array/tasks_type" />
+                android:entries="@array/tasks_type"
+                android:textSize="15dp" />
 
         </LinearLayout>
 
