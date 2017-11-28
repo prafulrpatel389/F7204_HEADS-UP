@@ -16,9 +16,7 @@ import java.util.ArrayList;
 public class Activities_quizzes extends Fragment {
 
     private ListView listView;
-    public String[] date = { "2/20/17","2/15/17","2/12/17","2/17/17","2/12/17","2/5/17","1/22/17","1/18/17"};
-    String[] type = new String[] {"Daily Training", "Pre-game Training", "Game Time", "Post-game Recover","Daily Training", "Pre-game Training", "Game Time", "Post-game Recover"};
-    String[] status = new String[] {"Working", "Finished","Finished","Finished","Finished","Finished","Finished","Finished"};
+    String[] type = new String[] {"Basics of Concussions", "Quiz 2"};
     private ArrayList<String> report = new ArrayList<>();
 
     @Nullable
@@ -30,12 +28,12 @@ public class Activities_quizzes extends Fragment {
         listView = (ListView)view.findViewById(R.id.quizzes_listView);
 
 
-        for (int i = 0; i < 2; i++) {
-            String value = "Date:    "+date[i] + "\n\n"+ "Type:    " + type[i]+"\n\n";
+        for (int i = 0; i < type.length; i++) {
+            String value = type[i];
             report.add(value);
         }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1, report);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.text_view, report);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
