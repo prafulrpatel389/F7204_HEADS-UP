@@ -126,7 +126,6 @@ public class Quiz extends AppCompatActivity {
 
     private void updateQuestion(){
         mQuestionNumber = getCurrentQuestion();
-        mAnswer = mQuizQuestionLibrary.getCorrectAnswer(mQuestionNumber);
 
         if (mQuestionNumber > 2) {
             Intent i = new Intent(Quiz.this, Activities.class);
@@ -141,6 +140,7 @@ public class Quiz extends AppCompatActivity {
             mButtonChoice1.setText(mQuizQuestionLibrary.getChoice1(mQuestionNumber));
             mButtonChoice2.setText(mQuizQuestionLibrary.getChoice2(mQuestionNumber));
             mButtonChoice3.setText(mQuizQuestionLibrary.getChoice3(mQuestionNumber));
+            mAnswer = mQuizQuestionLibrary.getCorrectAnswer(mQuestionNumber);
 
             mQuestionNumber++;
 
