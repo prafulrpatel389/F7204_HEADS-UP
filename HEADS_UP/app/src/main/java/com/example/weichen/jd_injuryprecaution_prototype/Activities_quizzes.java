@@ -27,7 +27,6 @@ public class Activities_quizzes extends Fragment {
 
         listView = (ListView)view.findViewById(R.id.quizzes_listView);
 
-
         for (int i = 0; i < type.length; i++) {
             String value = type[i];
             report.add(value);
