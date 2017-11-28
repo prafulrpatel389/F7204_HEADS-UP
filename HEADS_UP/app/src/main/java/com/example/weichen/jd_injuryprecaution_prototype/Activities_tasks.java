@@ -1,5 +1,6 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
+import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -34,7 +36,10 @@ import com.example.weichen.jd_injuryprecaution_prototype.db.Group_dbHelper;
 import com.example.weichen.jd_injuryprecaution_prototype.db.Task_db;
 import com.example.weichen.jd_injuryprecaution_prototype.db.Task_dbHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.example.weichen.jd_injuryprecaution_prototype.R.layout.activity_activities_tasks;
@@ -46,6 +51,7 @@ public class Activities_tasks extends Fragment {
 
     EditText etTaskDate;
     Spinner  spTaskType;
+    Calendar myCalendar;
 
     private static final String TAG = "Tasks";
     private Task_dbHelper mHelper;
@@ -59,7 +65,9 @@ public class Activities_tasks extends Fragment {
         final View view       = inflater.inflate(activity_activities_tasks,container,false);
         final Context context = getActivity();
 
-        mHelper       = new Task_dbHelper(context);
+        mHelper    = new Task_dbHelper(context);
+
+        myCalendar = Calendar.getInstance();
 
         mTaskListView = (ListView) view.findViewById(R.id.tasks_listView);
         mTaskListView.setClickable(true);
@@ -75,6 +83,29 @@ public class Activities_tasks extends Fragment {
                 etTaskDate = (EditText) mView.findViewById(R.id.task_date);
                 spTaskType = (Spinner) mView.findViewById(R.id.newTasks_spinner);
 
+                final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                          int dayOfMonth) {
+                        myCalendar.set(Calendar.YEAR, year);
+                        myCalendar.set(Calendar.MONTH, monthOfYear);
+                        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                        updateLabel();
+                    }
+
+                };
+
+                etTaskDate.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        new DatePickerDialog(getActivity(), date, myCalendar
+                                .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                                myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                    }
+                });
+
                 final Button bCreate = (Button) mView.findViewById(R.id.task_create);
                 bCreate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -87,7 +118,7 @@ public class Activities_tasks extends Fragment {
                         SQLiteDatabase db = mHelper.getWritableDatabase();
                         ContentValues values = new ContentValues();
 
-                        values.put(Task_db.TaskEntry.COL_TASK_DATE, newDate);
+                        values.put(Task_db.TaskEntry.COL_TASK_DATE, newDate + " - " + newType);
                         values.put(Task_db.TaskEntry.COL_TASK_TYPE, newType);
 
                         db.insertWithOnConflict(Task_db.TaskEntry.TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE);
@@ -118,7 +149,7 @@ public class Activities_tasks extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), Task.class);
-                intent.putExtra("task_no", position);
+                intent.putExtra("task_info", mTaskListView.getItemAtPosition(position).toString());
                 startActivity(intent);
             }
         });
@@ -135,6 +166,9 @@ public class Activities_tasks extends Fragment {
     private void updateUI() {
         ArrayList<String> taskList = new ArrayList<>();
         SQLiteDatabase db = mHelper.getReadableDatabase();
+
+//        db.delete(Task_db.TaskEntry.TABLE, null, null);
+
         Cursor cursor = db.query(Task_db.TaskEntry.TABLE,
                 new String[]{Task_db.TaskEntry.COL_TASK_DATE}, null, null, null, null, null);
 
@@ -179,6 +213,13 @@ public class Activities_tasks extends Fragment {
         db.delete(Group_db.GroupEntry.TABLE, Task_db.TaskEntry.COL_TASK_DATE + " = ?", new String[] {task});
         db.close();
         updateUI();
+    }
+
+    private void updateLabel() {
+        String myFormat = "MM/dd/yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+        etTaskDate.setText(sdf.format(myCalendar.getTime()));
     }
 
 }

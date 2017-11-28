@@ -7,11 +7,11 @@
     tools:context="com.example.weichen.jd_injuryprecaution_prototype.Activities_tasks">
 
 
-
     <ListView
+        android:id="@+id/tasks_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tasks_listView">
+        android:clickable="true">
 
 
     </ListView>

@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 public class newTasks_popup extends AppCompatActivity {
 
-    private static String[] tasks_type = new String[]{"Daily Training", "Pre-game Training", "Game Time", "Post-game Recovery"};
+    private static String[] tasks_type = new String[]{"Daily Training", "Pre-Game Training", "Game Time", "Post-Game Recovery"};
     private Spinner type;
 
     @Override

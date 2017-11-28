@@ -8,10 +8,17 @@
         android:id="@+id/task_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/task_complete"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/task_complete"
+        android:layout_toStartOf="@+id/task_complete"
+        android:gravity="center"
         android:text="Hello"
-        android:textSize="20sp" />
+        android:textAlignment="viewStart"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/task_complete"
@@ -19,8 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
         android:background="@color/cdc_light_green"
+        android:focusable="false"
         android:onClick="completeTask"
-        android:text="Complete" />
+        android:text="Complete"
+        android:textSize="15sp" />
 
 </RelativeLayout>

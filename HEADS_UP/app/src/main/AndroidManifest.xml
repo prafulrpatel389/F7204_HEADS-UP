@@ -52,15 +52,28 @@
             android:label="Surveys" />
         <activity
             android:name=".Setting"
-            android:label="Setting" />
-        <activity android:name=".Task" />
-        <activity android:name=".Activities_tasks" />
-        <activity android:name=".Activities_quizzes" />
-        <activity android:name=".Activities_surveys" />
-        <activity android:name=".Status_me" />
-        <activity android:name=".Status_groups" />
-        <activity android:name=".Status_local" />
-        <activity android:name=".newTasks_popup" />
+            android:label="Settings" />
+        <activity
+            android:name=".Task"
+            android:label="Current Task" />
+        <activity
+            android:name=".Activities_tasks"
+            android:label="Tasks" />
+        <activity
+            android:name=".Activities_quizzes"
+            android:label="Quizzes" />
+        <activity
+            android:name=".Activities_surveys"
+            android:label="Surveys" />
+        <activity
+            android:name=".Status_me" />
+        <activity
+            android:name=".Status_groups" />
+        <activity
+            android:name=".Status_local" />
+        <activity
+            android:name=".newTasks_popup"
+            android:label="Create Task" />
         <activity
             android:name=".Password_change"
             android:label="Password Change" />
@@ -68,14 +81,16 @@
             android:name=".begin"
             android:label="Concussion Safety Challenge">
 
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".GroupFunc" />
+
+        <activity
+            android:name=".GroupFunc"
+            android:label="Current Group" />
         <activity
             android:name=".Articles_view"
             android:label="Articles"/>

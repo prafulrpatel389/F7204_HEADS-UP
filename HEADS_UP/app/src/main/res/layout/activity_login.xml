@@ -76,7 +76,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="29dp"
         android:onClick="toForgotLayout"
-        android:text="I can't Login"
+        android:text="I can't login"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/colorPrimaryDark"
         android:textColorHighlight="@color/colorPrimary"
