@@ -80,7 +80,7 @@
             android:text="Current Score"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@android:color/background_dark"
-            android:textSize="18sp" />
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/textView17"
@@ -91,7 +91,7 @@
             android:layout_marginBottom="11dp"
             android:text="638"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@android:color/holo_orange_dark"
+            android:textColor="@color/cdc_green"
             android:textSize="30sp" />
 
         <ImageView

@@ -38,7 +38,7 @@ public class Activities_surveys extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), Quiz.class);
+                Intent intent = new Intent(getActivity(), Surveys.class);
                 intent.putExtra("survey_no", position);
                 startActivity(intent);
             }
