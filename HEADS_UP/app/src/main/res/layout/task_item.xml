@@ -18,7 +18,8 @@
         android:gravity="center"
         android:text="Hello"
         android:textAlignment="viewStart"
-        android:textSize="15sp" />
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark" />
 
     <Button
         android:id="@+id/task_complete"
