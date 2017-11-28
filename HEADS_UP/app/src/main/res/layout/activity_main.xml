@@ -73,7 +73,7 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textView17"
+            android:layout_above="@+id/score"
             android:layout_centerHorizontal="true"
             android:duplicateParentState="false"
             android:elevation="0dp"
@@ -83,7 +83,7 @@
             android:textSize="36sp" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/main_group"

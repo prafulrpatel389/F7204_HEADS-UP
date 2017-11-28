@@ -1,6 +1,7 @@
 package com.example.weichen.jd_injuryprecaution_prototype;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity{
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+    private int score;
+    private TextView scoreView;
+
     Typeface gothambold, gothambolditalic, gothambook, gothambookitalic,
             gothamlight, gothamlightitalic, gothammedium, gothammedium_1,
             gothammediumitalic;
@@ -28,6 +32,12 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_pass", MODE_PRIVATE);
+        score = sharedPreferences.getInt("score", 0);
+
+        scoreView = (TextView)findViewById(R.id.score);
+        scoreView.setText(String.valueOf(score));
 
 
         gothambold = Typeface.createFromAsset(getAssets(),"gothambold.ttf");

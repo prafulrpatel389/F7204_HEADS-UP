@@ -133,6 +133,14 @@ public class Quiz extends AppCompatActivity {
 
             storeCurrentQuestion(0);
 
+            SharedPreferences sharedPreferences = getSharedPreferences("user_pass", MODE_PRIVATE);
+            int score = sharedPreferences.getInt("score", 0);
+            score += mScore;
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("score", score);
+            editor.apply();
+
             // Now start your activity
             startActivity(i);
         } else {

@@ -282,8 +282,6 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
         if (result.equals("Password Reset Successful")) {
             context.startActivity(new Intent(context, Login.class));
         }
-
-
     }
 
 

@@ -40,23 +40,19 @@ public class Login extends AppCompatActivity {
 
 
     public void toMainLayout(View view){
-
         String _username = username.getText().toString();
         String _password = password.getText().toString();
         String type = "login";
 
         SharedPreferences sharedPreferences = getSharedPreferences("user_pass", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editot = sharedPreferences.edit();
-        editot.putString("username", _username);
-        editot.putString("password", _password);
-        editot.commit();
-
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("username", _username);
+        editor.putString("password", _password);
+        editor.putInt("score", 10);
+        editor.commit();
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, _username, _password);
-
-
-
     }
 
     public void toForgotLayout(View view) {
