@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.weichen.jd_injuryprecaution_prototype.About">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/Version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="Version 1.0"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/cdcheadsup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="HEADS UP is a series of educational initiatives, developed by CDC, that all have a common goal: Protect kids and teens by raising awareness and informing action to improve prevention, recognition, and response to concussion and other serious brain injuries."
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
+
+</LinearLayout>
