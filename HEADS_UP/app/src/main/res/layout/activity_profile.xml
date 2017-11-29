@@ -23,7 +23,7 @@
             app:menu="@menu/bottom_navigation_main"/>
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="62dp"
@@ -35,24 +35,24 @@
             android:layout_toStartOf="@+id/password_changes" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/email_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView19"
-            android:layout_alignStart="@+id/textView19"
-            android:layout_below="@+id/textView19"
+            android:layout_alignLeft="@+id/name_label"
+            android:layout_alignStart="@+id/name_label"
+            android:layout_below="@+id/name_label"
             android:layout_marginTop="40dp"
             android:text="Email"
             android:textColor="@android:color/background_dark"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/zip_Code"
+            android:id="@+id/zip_Code_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView20"
-            android:layout_alignStart="@+id/textView20"
-            android:layout_below="@+id/textView20"
+            android:layout_alignLeft="@+id/email_label"
+            android:layout_alignStart="@+id/email_label"
+            android:layout_below="@+id/email_label"
             android:layout_marginTop="39dp"
             android:text="Zipcode"
             android:textColor="@android:color/background_dark"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:layout_alignBottom="@+id/textView19"
+            android:layout_alignBottom="@+id/name_label"
             android:layout_alignLeft="@+id/email_change"
             android:layout_alignStart="@+id/email_change" />
 
@@ -74,9 +74,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:layout_above="@+id/zip_Code"
-            android:layout_toRightOf="@+id/zip_Code"
-            android:layout_toEndOf="@+id/zip_Code" />
+            android:layout_above="@+id/zip_Code_label"
+            android:layout_toRightOf="@+id/zip_Code_label"
+            android:layout_toEndOf="@+id/zip_Code_label" />
 
         <EditText
             android:id="@+id/zipcode_change"
@@ -84,8 +84,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:layout_alignBaseline="@+id/zip_Code"
-            android:layout_alignBottom="@+id/zip_Code"
+            android:layout_alignBaseline="@+id/zip_Code_label"
+            android:layout_alignBottom="@+id/zip_Code_label"
             android:layout_alignLeft="@+id/email_change"
             android:layout_alignStart="@+id/email_change" />
 

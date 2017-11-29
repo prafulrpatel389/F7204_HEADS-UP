@@ -3,15 +3,24 @@ package com.example.weichen.jd_injuryprecaution_prototype;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+
+    private Button login;
+    Typeface gothambold, gothammedium;
+    private TextView username_login;
+    private TextView password_login;
+    private TextView forgot_logininfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +28,20 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        login = (Button) findViewById(R.id.login_button_login);
+        gothambold = Typeface.createFromAsset(getAssets(),"gothambold.ttf");
+        login.setTypeface(gothambold);
+
+        gothammedium = Typeface.createFromAsset(getAssets(), "gothammedium.ttf");
+
+        username_login = (TextView) findViewById(R.id.textView);
+        password_login = (TextView) findViewById(R.id.textView2);
+        forgot_logininfo = (TextView) findViewById(R.id.login_forgot);
+
+        username_login.setTypeface(gothammedium);
+        password_login.setTypeface(gothammedium);
+       forgot_logininfo.setTypeface(gothammedium);
 
 
         username = (EditText) findViewById(R.id.login_input_username);
