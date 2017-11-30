@@ -12,7 +12,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity{
@@ -27,6 +26,8 @@ public class MainActivity extends AppCompatActivity{
             gothamlight, gothamlightitalic, gothammedium, gothammedium_1,
             gothammediumitalic;
 
+    TextView name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,11 @@ public class MainActivity extends AppCompatActivity{
 
         scoreView = (TextView)findViewById(R.id.score);
         scoreView.setText(String.valueOf(score));
+
+        name = (TextView) findViewById(R.id.main_username);
+
+        String username = sharedPreferences.getString("username", "");
+        name.setText(username);
 
 
         gothambold = Typeface.createFromAsset(getAssets(),"gothambold.ttf");
@@ -149,4 +155,7 @@ public class MainActivity extends AppCompatActivity{
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

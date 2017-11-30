@@ -12,6 +12,7 @@ public class Login extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +49,17 @@ public class Login extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("username", _username);
         editor.putString("password", _password);
-        editor.putInt("score", 10);
         editor.commit();
+
+        editor.putInt("score", 12);
 
         BackgroundWorker backgroundWorker = new BackgroundWorker(this);
         backgroundWorker.execute(type, _username, _password);
+
     }
 
     public void toForgotLayout(View view) {
         startActivity(new Intent(Login.this, Forgot.class));
     }
+
 }
