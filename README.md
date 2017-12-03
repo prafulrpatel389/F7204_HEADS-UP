@@ -1,11 +1,10 @@
 Proposed Application Name: "Concussion Safety Challenge" 
 
-	Source Code: https://github.com/prafulrpatel389/F7204_HEADS-UP
+Source Code: https://github.com/prafulrpatel389/F7204_HEADS-UP
 
 Installation Guide:
 
-			End User: 
-			Currently, this application is not tested or compiled for commercial use. It needs to be fully integrated with Stable DATABASE and WEB 			 Application for content Maintenance.
+End User: Currently, this application is not tested or compiled for commercial use. It needs to be fully integrated with Stable DATABASE and WEB Application for content Maintenance.
 
 
 For Developers:
@@ -46,7 +45,7 @@ Required Application(s) / Pre-requisites (ONLY APPLICABLE to ANDROID ENVIORNMENT
 						4 GB Recommended (500 MB for IDE + 1.5 GB for Android SDK and emulator system image)
 						1280 x 800 minimum screen resolution
 
-						** Above Requirements are from https://developer.android.com/studio/index.html **
+** Above Requirements are from https://developer.android.com/studio/index.html **
 
 
 Dependent Libraries:	
@@ -54,26 +53,22 @@ Dependent Libraries:
 
 						** Git Bash or Git integration with Android Studio is required to  clone/checkout F7202_HEADS-UP repository
 
-						git(Bash) for Windows: https://git-for-windows.github.io/
+						git(Bash) for Windows: https://git-for-windows.github.io/   or   https://git-scm.com/downloads
 
-											   https://git-scm.com/downloads
-
-Download Instructions: 
-						Clone with HTTPS:
+Download Instructions: Clone with HTTPS:
 
 						Use Git or checkout with SVN using the web URL
 
 						https://github.com/prafulrpatel389/F7204_HEADS-UP.git
 
-
-						ZIP Archieve Download:
+Download Instructions: ZIP Archieve Download:
 
 						https://github.com/prafulrpatel389/F7204_HEADS-UP/archive/android.zip
 
-Build Instructions:  	Open Android Studio
+Build Instructions:  	
 
-						If prompted with Welcome screen then 
-
+						Open Android Studio
+					
 						Step 1: select "Open an existing Android Studio project"
 						Step 2: navigate to download/clone destination
 						Step 3: select  "F7204_HEADS-UP" folder with Android Studio icon
@@ -82,33 +77,28 @@ Build Instructions:  	Open Android Studio
 						For first instance it will take few seconds to a minute to Auto Build and compile the project.
 
 						Step 5: go to "Run" menu in Android Studio and select the Run'app'
-
 						Step 6: Select Deployment window will prompt to select Virtual Devices
 								(If no device is added then add new by selecting "Create New Virtual Device". Select any device and complete the installation.)
 						Step 7: Android Emulator will open Virtual Device.
 								(This will take few minutes based on PC Hardware.)
 						This should open LIVE Environment of CDC HEADS UP Application.
 
-Installation Instructions: 
-						No ADDITIONAL INSTALLATION NEEDED
+Installation Instructions: No ADDITIONAL INSTALLATION NEEDED
+
+						Application is still in Development phase. It has not been compiled as stand alone application. Refer to Build 			 Instructions for Testing and Demo of the current state of application.
+
+Run Instructions: Application RUNS within Android Studio.
 
 						Application is still in Development phase. It has not been compiled as stand alone application. Refer to Build Instructions for Testing and Demo of the current state of application.
 
-Run Instructions: 		
-						Application RUNS within Android Studio.
+Troubleshooting:	If application does not compile/build: 
 
-						Application is still in Development phase. It has not been compiled as stand alone application. Refer to Build Instructions for Testing and Demo of the current state of application.
+						Check SDK Version with build.gradle (Project: HEADS_ UP)
+						Check Gradle Version with Gradle Classpath (Module: app)
 
-Troubleshooting:		
-						If application does not compile/build: 
+						If Emulator Crashes: Make sure project compiles fully and builds successfully
 
-										Check SDK Version with build.gradle (Project: HEADS_ UP)
-										Check Gradle Version with Gradle Classpath (Module: app)
-
-						If Emulator Crashes:
-										Make sure project compiles fully and builds successfully
-
-						If Login fails:  Check username and password
+						If Login fails: Check username and password
 
 						If Login fails (with correct credentials):  Check database status
 
