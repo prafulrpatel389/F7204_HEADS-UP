@@ -1,16 +1,16 @@
 Proposed Application Name: "Concussion Safety Challenge" 
 
-Source Code: https://github.com/prafulrpatel389/F7204_HEADS-UP
+	Source Code: https://github.com/prafulrpatel389/F7204_HEADS-UP
 
 Installation Guide:
 
-End User: 
-Currently, this application is not tested or compiled for commercial use. It needs to be fully integrated with Stable DATABASE and WEB Application for content Maintenance.
+			End User: 
+			Currently, this application is not tested or compiled for commercial use. It needs to be fully integrated with Stable DATABASE and WEB 			 Application for content Maintenance.
 
 
 For Developers:
 
-Required Application(s) / Pre-requisites (ONLY APPLICABLE to ANDROID ENVIORNMENT
+Required Application(s) / Pre-requisites (ONLY APPLICABLE to ANDROID ENVIORNMENT)
 
 
 						Android Studio 2.6 or Newer
