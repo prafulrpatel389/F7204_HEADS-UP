@@ -115,3 +115,4 @@ Troubleshooting:
 						If Registration fails: check database status
 
 						Please contact Team Code @ ppatel389@gatech.edu for issues that are not mentioned above.
+
