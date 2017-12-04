@@ -25,6 +25,7 @@
             android:label="Registration" />
         <activity
             android:name=".About"
+
             android:label="About" />
         <activity
             android:name=".Forgot"

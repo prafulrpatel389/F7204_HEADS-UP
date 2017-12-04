@@ -15,11 +15,11 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
+
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-
     private int score;
     private TextView scoreView;
 
@@ -27,17 +27,25 @@ public class MainActivity extends AppCompatActivity{
             gothamlight, gothamlightitalic, gothammedium, gothammedium_1,
             gothammediumitalic;
 
+    TextView name;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("user_pass", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences
+                ("user_pass", MODE_PRIVATE);
         score = sharedPreferences.getInt("score", 0);
 
-        scoreView = (TextView)findViewById(R.id.score);
+        scoreView = (TextView) findViewById(R.id.score);
         scoreView.setText(String.valueOf(score));
+
+        name = (TextView) findViewById(R.id.main_username);
+
+        String username = sharedPreferences.getString("username", "");
+        name.setText(username);
 
 
         gothambold = Typeface.createFromAsset(getAssets(),"gothambold.ttf");
@@ -58,18 +66,22 @@ public class MainActivity extends AppCompatActivity{
 
         //sets toggle of drawer navigation
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_drawerLayout);
-        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string
+                .navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //sets functions of drawer navigation
-        NavigationView topNavigation = (NavigationView) findViewById(R.id.main_top_navigation);
-        topNavigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        NavigationView topNavigation = (NavigationView) findViewById(R.id
+                .main_top_navigation);
+        topNavigation.setNavigationItemSelectedListener(new NavigationView
+                .OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.nav_home:
-                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        startActivity(new Intent(MainActivity.this,
+                                MainActivity.class));
                         break;
                     case R.id.nav_activities:
                         startActivity(new Intent(MainActivity.this, Activities.class));
