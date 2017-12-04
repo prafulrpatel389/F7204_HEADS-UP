@@ -5,8 +5,9 @@
   $user_pass = $_POST["user_pass"];
   $user_email =$_POST["user_email"];
   $user_zip =$_POST["user_zip"];
+  $user_score =$_POST["user_score"];
 
-  $mysql_qry = "insert into user_profiles (username, name, password, email, zipcode) values ('$user_username','$user_name','$user_pass', '$user_email', '$user_zip')";
+  $mysql_qry = "insert into user_profiles (username, name, password, email, zipcode, score) values ('$user_username','$user_name','$user_pass', '$user_email', '$user_zip', 'user_score')";
   $contUsername = "select * from user_profiles where username like '$user_username'";
   $contEmail = "select * from user_profiles where email like '$user_email'";
 

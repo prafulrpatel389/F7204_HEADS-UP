@@ -76,15 +76,15 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 e.printStackTrace();
             }
         }
+
         if (type.equals("register")) {
-
             try {
-
                 String user_name = params[1];
                 String name = params[2];
                 String password = params[3];
                 String email = params[4];
                 String zipcode = params[5];
+                String score = "10";
 
                 URL url = new URL(register_url);
 
@@ -98,7 +98,8 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                         +URLEncoder.encode("user_name", "UTF-8")+"="+URLEncoder.encode(name, "UTF-8")+"&"
                         +URLEncoder.encode("user_pass", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8")+"&"
                         +URLEncoder.encode("user_email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")+"&"
-                        +URLEncoder.encode("user_zip", "UTF-8")+"="+URLEncoder.encode(zipcode, "UTF-8");
+                        +URLEncoder.encode("user_zip", "UTF-8")+"="+URLEncoder.encode(zipcode, "UTF-8")+"&"
+                        +URLEncoder.encode("user_score", "UTF-8")+"="+URLEncoder.encode(score, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -121,10 +122,9 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 e.printStackTrace();
             }
         }
+
         if (type.equals("profile")) {
-
             try {
-
                 String name = params[1];
                 String zip = params[2];
                 String email = params[3];
@@ -173,7 +173,6 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 String newPass = params[2];
 
                 URL url = new URL(password_url);
-
 
                 HttpURLConnection httpURLConnection =  (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
