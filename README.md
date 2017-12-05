@@ -2,12 +2,11 @@ Proposed Application Name: "Concussion Safety Challenge"
 
 Source Code: https://github.com/prafulrpatel389/F7204_HEADS-UP
 
-Installation Guide:
+# Installation Guide
 
 End User: Currently, this application is not tested or compiled for commercial use. It needs to be fully integrated with Stable DATABASE and WEB Application for content Maintenance.
 
-
-For Developers:
+## For Developers
 
 Required Application(s) / Pre-requisites (ONLY APPLICABLE to ANDROID ENVIORNMENT)
 
@@ -46,21 +45,23 @@ Required Application(s) / Pre-requisites (ONLY APPLICABLE to ANDROID ENVIORNMENT
 ** Above Requirements are from https://developer.android.com/studio/index.html **
 
 
-Dependent Libraries: Android Studio is ALL IN ONE developing tool. No external software are required for development and testing. 
+## Dependent Libraries
+
+	Android Studio is ALL IN ONE developing tool. No external software are required for development and testing. 
 
 	** Git Bash or Git integration with Android Studio is required to  clone/checkout F7202_HEADS-UP repository
 
 	git(Bash) for Windows: https://git-for-windows.github.io/   or   https://git-scm.com/downloads
 
-Download Instructions:
+## Download Instructions (Clone with HTTPS)
 
-	Clone with HTTPS: Use Git or checkout with SVN using the web URL https://github.com/prafulrpatel389/F7204_HEADS-UP.git
+	Use Git or checkout with SVN using the web URL https://github.com/prafulrpatel389/F7204_HEADS-UP.git
 
-Download Instructions:
+## Download Instructions (ZIP archive download)
 	
-	ZIP Archive Download: https://github.com/prafulrpatel389/F7204_HEADS-UP/archive/android.zip
+	https://github.com/prafulrpatel389/F7204_HEADS-UP/archive/android.zip
 
-Build Instructions:
+## Build Instructions
 
 	Open Android Studio
 					
@@ -79,15 +80,19 @@ Build Instructions:
 	
 	This should open LIVE Environment of CDC HEADS UP Application.
 
-Installation Instructions: No ADDITIONAL INSTALLATION NEEDED
+## Installation Instructions
+
+	No ADDITIONAL INSTALLATION NEEDED
 
 	Application is still in Development phase. It has not been compiled as stand alone application. Refer to Build 			 Instructions for Testing and Demo of the current state of application.
 
-Run Instructions: Application RUNS within Android Studio.
+## Run Instructions
+
+	Application RUNS within Android Studio.
 
 	Application is still in Development phase. It has not been compiled as stand alone application. Refer to Build Instructions for Testing and Demo of the current state of application.
 
-Troubleshooting: If application does not compile/build: 
+## Troubleshooting (If application does not compile/build) 
 
 	Check SDK Version with build.gradle (Project: HEADS_ UP)
 	Check Gradle Version with Gradle Classpath (Module: app)
@@ -96,8 +101,36 @@ Troubleshooting: If application does not compile/build:
 
 	If Login fails: Check username and password
 
-	If Login fails (with correct credentials):  Check database status
+	If Login fails (with correct credentials): Check database status
 
-	If Registration fails: check database status
+	If Registration fails: Check database status
 
 	Please contact Team Code @ ppatel389@gatech.edu for issues that are not mentioned above.
+	
+# Release Notes v0.9
+
+## New Features
+
+  * User interface improvements
+  * Added the ability to create and leave groups
+  * Graphical representation of personal score history
+
+## Bug Fixes
+
+  * User’s score is calculated automatically upon completion of quizzes and surveys
+  * Application no longer crashes when the “Add” button on the Group screen is clicked
+  * User created tasks are now persistent and completable, and task creation features a new calendar view
+
+## Known Bugs
+
+  * “Add” button on the Group screen does not send an invitation to other users via email
+  * Push notifications for new quizzes and surveys do not work
+  * Full connectivity of main functionality with the database
+  * Storage of personal icon or profile pictures in the database
+  * Password reset through email confirmation instead of user profile credential check
+  * Ability to share progress within the application on social medias (e.g. Facebook, Twitter, etc.) 
+
+** Known bugs also include features to be implemented in the future
+
+
+
